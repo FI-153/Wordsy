@@ -9,28 +9,63 @@ import XCTest
 @testable import Wordsy
 
 class WordsyTests: XCTestCase {
+	
+	var wordManager:WordManager!
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+		self.wordManager = WordManager()
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+		self.wordManager = nil
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+	
+	func test_WordManager_init_allValuesInitialisedCorrectly() {
+		//Given
+		//When
+		//Then
+		assertEmpty(array: wordManager.typedWords)
+		XCTAssertEqual(wordManager.nextWords.count, startingWords.count)
+		XCTAssertEqual(wordManager.currentWord, startingWords.first!)
+	}
+	
+	func test_WordManager_addToTypedWords_theCurrentWordIsAddedToTypedWords(){
+		//Given
+		//When
+		wordManager.addToTypedWords()
+		//Then
+		XCTAssertEqual(wordManager.typedWords.first, wordManager.currentWord)
+	}
+	
+	func test_WordManager_emptyTypedWords_theArrayIsEmptied(){
+		//Given
+		//When
+		wordManager.emptyTypedWords()
+		//Then
+		assertEmpty(array: wordManager.typedWords)
+	}
+	
+	func test_WordManager_removeFirstWordFromNext_theFirstWordIsRemovedFromNext(){
+		//Given
+		let firstWord = wordManager.nextWords.first!
+		//When
+		wordManager.removeFirstWordFromNextWords()
+		//Then
+		XCTAssertNotEqual(wordManager.nextWords.first!, firstWord)
+	}
+	
+	func test_WordManager_getNewRandomWord_theNumberOfElementsInWordsIsUnchanged(){
+		//Given
+		let numberOfElements = wordManager.nextWords.count
+		//When
+		wordManager.removeFirstWordFromNextWords()
+		wordManager.getNewRandomWord()
+		//Then
+		XCTAssertEqual(numberOfElements, wordManager.nextWords.count)
+	}
+	
+	func assertEmpty <T> (array:[T]){
+		XCTAssertTrue(array.isEmpty)
+	}
 
 }

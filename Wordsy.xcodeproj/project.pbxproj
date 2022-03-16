@@ -12,19 +12,14 @@
 		A16D4F8327E26BAE004BEDCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A16D4F8227E26BAE004BEDCE /* Assets.xcassets */; };
 		A16D4F8627E26BAE004BEDCE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A16D4F8527E26BAE004BEDCE /* Preview Assets.xcassets */; };
 		A16D4F9127E26BAE004BEDCE /* WordsyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D4F9027E26BAE004BEDCE /* WordsyTests.swift */; };
-		A16D4F9B27E26BAE004BEDCE /* WordsyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D4F9A27E26BAE004BEDCE /* WordsyUITests.swift */; };
-		A16D4F9D27E26BAE004BEDCE /* WordsyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D4F9C27E26BAE004BEDCE /* WordsyUITestsLaunchTests.swift */; };
+		A16D4FAD27E26C15004BEDCE /* WordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D4FAC27E26C15004BEDCE /* WordManager.swift */; };
+		A16D4FAE27E26C15004BEDCE /* WordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D4FAC27E26C15004BEDCE /* WordManager.swift */; };
+		A16D4FB027E26C26004BEDCE /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D4FAF27E26C26004BEDCE /* Word.swift */; };
+		A16D4FB127E26C26004BEDCE /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D4FAF27E26C26004BEDCE /* Word.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		A16D4F8D27E26BAE004BEDCE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A16D4F7327E26BAC004BEDCE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A16D4F7A27E26BAC004BEDCE;
-			remoteInfo = Wordsy;
-		};
-		A16D4F9727E26BAE004BEDCE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A16D4F7327E26BAC004BEDCE /* Project object */;
 			proxyType = 1;
@@ -42,9 +37,8 @@
 		A16D4F8727E26BAE004BEDCE /* Wordsy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Wordsy.entitlements; sourceTree = "<group>"; };
 		A16D4F8C27E26BAE004BEDCE /* WordsyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WordsyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A16D4F9027E26BAE004BEDCE /* WordsyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsyTests.swift; sourceTree = "<group>"; };
-		A16D4F9627E26BAE004BEDCE /* WordsyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WordsyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A16D4F9A27E26BAE004BEDCE /* WordsyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsyUITests.swift; sourceTree = "<group>"; };
-		A16D4F9C27E26BAE004BEDCE /* WordsyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A16D4FAC27E26C15004BEDCE /* WordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordManager.swift; sourceTree = "<group>"; };
+		A16D4FAF27E26C26004BEDCE /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,13 +56,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A16D4F9327E26BAE004BEDCE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -77,7 +64,6 @@
 			children = (
 				A16D4F7D27E26BAC004BEDCE /* Wordsy */,
 				A16D4F8F27E26BAE004BEDCE /* WordsyTests */,
-				A16D4F9927E26BAE004BEDCE /* WordsyUITests */,
 				A16D4F7C27E26BAC004BEDCE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -87,7 +73,6 @@
 			children = (
 				A16D4F7B27E26BAC004BEDCE /* Wordsy.app */,
 				A16D4F8C27E26BAE004BEDCE /* WordsyTests.xctest */,
-				A16D4F9627E26BAE004BEDCE /* WordsyUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,7 +81,9 @@
 			isa = PBXGroup;
 			children = (
 				A16D4F7E27E26BAC004BEDCE /* WordsyApp.swift */,
-				A16D4F8027E26BAC004BEDCE /* ContentView.swift */,
+				A16D4FAB27E26BDA004BEDCE /* Models */,
+				A16D4FA927E26BC7004BEDCE /* Views */,
+				A16D4FAA27E26BD1004BEDCE /* Managers */,
 				A16D4F8227E26BAE004BEDCE /* Assets.xcassets */,
 				A16D4F8727E26BAE004BEDCE /* Wordsy.entitlements */,
 				A16D4F8427E26BAE004BEDCE /* Preview Content */,
@@ -120,13 +107,28 @@
 			path = WordsyTests;
 			sourceTree = "<group>";
 		};
-		A16D4F9927E26BAE004BEDCE /* WordsyUITests */ = {
+		A16D4FA927E26BC7004BEDCE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A16D4F9A27E26BAE004BEDCE /* WordsyUITests.swift */,
-				A16D4F9C27E26BAE004BEDCE /* WordsyUITestsLaunchTests.swift */,
+				A16D4F8027E26BAC004BEDCE /* ContentView.swift */,
 			);
-			path = WordsyUITests;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A16D4FAA27E26BD1004BEDCE /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				A16D4FAC27E26C15004BEDCE /* WordManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		A16D4FAB27E26BDA004BEDCE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A16D4FAF27E26C26004BEDCE /* Word.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,24 +169,6 @@
 			productReference = A16D4F8C27E26BAE004BEDCE /* WordsyTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		A16D4F9527E26BAE004BEDCE /* WordsyUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A16D4FA627E26BAE004BEDCE /* Build configuration list for PBXNativeTarget "WordsyUITests" */;
-			buildPhases = (
-				A16D4F9227E26BAE004BEDCE /* Sources */,
-				A16D4F9327E26BAE004BEDCE /* Frameworks */,
-				A16D4F9427E26BAE004BEDCE /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A16D4F9827E26BAE004BEDCE /* PBXTargetDependency */,
-			);
-			name = WordsyUITests;
-			productName = WordsyUITests;
-			productReference = A16D4F9627E26BAE004BEDCE /* WordsyUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -199,10 +183,6 @@
 						CreatedOnToolsVersion = 13.2;
 					};
 					A16D4F8B27E26BAE004BEDCE = {
-						CreatedOnToolsVersion = 13.2;
-						TestTargetID = A16D4F7A27E26BAC004BEDCE;
-					};
-					A16D4F9527E26BAE004BEDCE = {
 						CreatedOnToolsVersion = 13.2;
 						TestTargetID = A16D4F7A27E26BAC004BEDCE;
 					};
@@ -223,7 +203,6 @@
 			targets = (
 				A16D4F7A27E26BAC004BEDCE /* Wordsy */,
 				A16D4F8B27E26BAE004BEDCE /* WordsyTests */,
-				A16D4F9527E26BAE004BEDCE /* WordsyUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -245,13 +224,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A16D4F9427E26BAE004BEDCE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -259,6 +231,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A16D4FAD27E26C15004BEDCE /* WordManager.swift in Sources */,
+				A16D4FB027E26C26004BEDCE /* Word.swift in Sources */,
 				A16D4F8127E26BAC004BEDCE /* ContentView.swift in Sources */,
 				A16D4F7F27E26BAC004BEDCE /* WordsyApp.swift in Sources */,
 			);
@@ -269,15 +243,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A16D4F9127E26BAE004BEDCE /* WordsyTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A16D4F9227E26BAE004BEDCE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A16D4F9D27E26BAE004BEDCE /* WordsyUITestsLaunchTests.swift in Sources */,
-				A16D4F9B27E26BAE004BEDCE /* WordsyUITests.swift in Sources */,
+				A16D4FAE27E26C15004BEDCE /* WordManager.swift in Sources */,
+				A16D4FB127E26C26004BEDCE /* Word.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,11 +255,6 @@
 			isa = PBXTargetDependency;
 			target = A16D4F7A27E26BAC004BEDCE /* Wordsy */;
 			targetProxy = A16D4F8D27E26BAE004BEDCE /* PBXContainerItemProxy */;
-		};
-		A16D4F9827E26BAE004BEDCE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A16D4F7A27E26BAC004BEDCE /* Wordsy */;
-			targetProxy = A16D4F9727E26BAE004BEDCE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -504,40 +466,6 @@
 			};
 			name = Release;
 		};
-		A16D4FA727E26BAE004BEDCE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7F47MKWBPJ;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = federicoimberti.WordsyUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = Wordsy;
-			};
-			name = Debug;
-		};
-		A16D4FA827E26BAE004BEDCE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7F47MKWBPJ;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = federicoimberti.WordsyUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = Wordsy;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -564,15 +492,6 @@
 			buildConfigurations = (
 				A16D4FA427E26BAE004BEDCE /* Debug */,
 				A16D4FA527E26BAE004BEDCE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A16D4FA627E26BAE004BEDCE /* Build configuration list for PBXNativeTarget "WordsyUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A16D4FA727E26BAE004BEDCE /* Debug */,
-				A16D4FA827E26BAE004BEDCE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
