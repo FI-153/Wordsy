@@ -8,7 +8,7 @@
 import XCTest
 @testable import Wordsy
 
-class WordsyTests: XCTestCase {
+class WordManagerTest: XCTestCase {
 	
 	var wordManager:WordManager!
 

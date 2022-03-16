@@ -11,7 +11,7 @@ import SwiftUI
 struct WordsyApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            WordView()
         }
     }
 }

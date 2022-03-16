@@ -37,4 +37,11 @@ let startingWords = [
 	"Defiant",
 	"Intrepid",
 	"Captain",
+	"Commander",
+	"Leutenant",
+	"Enseign",
+	"Picard",
+	"Archer",
+	"Sisko",
+
 ]

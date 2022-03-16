@@ -8,9 +8,9 @@
 import Cocoa
 
 class WordManager {
-	var currentWord:String = ""
-	var typedWords:[String] = []
-	var nextWords:[String] = []
+	@Published var currentWord:String = ""
+	@Published var typedWords:[String] = []
+	@Published var nextWords:[String] = []
 	
 	init(){
 		self.nextWords = startingWords
