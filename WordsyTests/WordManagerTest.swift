@@ -29,6 +29,21 @@ class WordManagerTest: XCTestCase {
 		XCTAssertEqual(wordManager.currentWord, startingWords.first!)
 	}
 	
+	func test_WordManager_showNextWord_theNextWordIsIssued(){
+		//Given
+		//When
+		//Then
+		XCTAssertEqual(wordManager.nextWords.first!, wordManager.showNextWord())
+	}
+	
+	func test_WordManager_assignCurrentWordToNextWord_theNextWordIsAssignedToTheCurrent(){
+		//Given
+		//When
+		wordManager.assignCurrentWordToNextWord()
+		//Then
+		XCTAssertEqual(wordManager.currentWord, wordManager.nextWords.first)
+	}
+	
 	func test_WordManager_addToTypedWords_theCurrentWordIsAddedToTypedWords(){
 		//Given
 		//When

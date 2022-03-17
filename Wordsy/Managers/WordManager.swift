@@ -21,6 +21,10 @@ class WordManager {
 		return nextWords.first!
 	}
 	
+	func assignCurrentWordToNextWord(){
+		currentWord = showNextWord()
+	}
+	
 	func addToTypedWords() {
 		typedWords.append(currentWord)
 	}
