@@ -12,6 +12,7 @@ struct WordsyApp: App {
     var body: some Scene {
         WindowGroup {
             WordView()
+				.preferredColorScheme(.light)
         }
     }
 }
