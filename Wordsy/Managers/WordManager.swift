@@ -14,9 +14,7 @@ class WordManager {
 	
 	init(){
 		self.nextWords = startingWords
-		assignCurrentWordToNextWord()
-		removeFirstWordFromNextWords()
-		getNewRandomWord()
+		assignANewWord()
 	}
 	
 	func showNextWord() -> String {
@@ -41,6 +39,12 @@ class WordManager {
 	
 	func getNewRandomWord(){
 		nextWords.append(words.randomElement()!)
+	}
+	
+	func assignANewWord(){
+		assignCurrentWordToNextWord()
+		removeFirstWordFromNextWords()
+		getNewRandomWord()
 	}
 	
 }

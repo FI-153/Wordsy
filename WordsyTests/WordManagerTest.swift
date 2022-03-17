@@ -79,6 +79,27 @@ class WordManagerTest: XCTestCase {
 		XCTAssertEqual(numberOfElements, wordManager.nextWords.count)
 	}
 	
+	func test_WordManager_assignANewWord_theAssignmentReflectsExpectedChanges(){
+		//Given
+		let expectedCurrentWord = wordManager.showNextWord()
+		let expectedFirstElementOfNextWords = wordManager.nextWords[1]
+		//When
+		wordManager.assignANewWord()
+		//Then
+		XCTAssertEqual(wordManager.currentWord, expectedCurrentWord)
+		XCTAssertEqual(wordManager.nextWords.first, expectedFirstElementOfNextWords)
+	}
+	
+	func test_WordManager_assignANewWord_newRandomWordAddedToNextWords(){
+		//Given
+		let expectedArrayLength = wordManager.nextWords.count
+		//When
+		wordManager.assignANewWord()
+		//Then
+		XCTAssertEqual(wordManager.nextWords.count, expectedArrayLength)
+
+	}
+	
 	func assertEmpty <T> (array:[T]){
 		XCTAssertTrue(array.isEmpty)
 	}

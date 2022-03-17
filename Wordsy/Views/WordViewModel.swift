@@ -45,9 +45,7 @@ class WordViewModel: ObservableObject {
 	
 	func correctWord(){
 		wordManager.addToTypedWords()
-		wordManager.assignCurrentWordToNextWord()
-		wordManager.removeFirstWordFromNextWords()
-		wordManager.getNewRandomWord()
+		wordManager.assignANewWord()
 	}
 	
 }
