@@ -14,13 +14,20 @@ struct WordView: View {
 	var body: some View {
 		VStack{
 			
+			Spacer()
+			
 			HStack{
-				typedWordSection
-				currentWordSection
-				nextWordSection
+				SecondsView(value: 60)
 			}
 			
-			//ONLY FOR DEVELOPMENT PURPOSES
+			Group{
+				HStack{
+					typedWordSection
+					currentWordSection
+					nextWordSection
+				}
+				
+				//ONLY FOR DEVELOPMENT PURPOSES
 				Button {
 					vm.correctWord()
 				} label: {
@@ -29,7 +36,12 @@ struct WordView: View {
 				}
 				.buttonStyle(.bordered)
 				.tint(.green)
-			//
+				//
+			}
+			.offset(y: 40)
+			
+			Spacer()
+			Spacer()
 			
 		}
 		.frame(width: 700, height: 500, alignment: .center)

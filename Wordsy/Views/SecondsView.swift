@@ -18,11 +18,11 @@ struct SecondsView: View {
     var body: some View {
 		ZStack{
 			Circle()
-				.fill(Color.primary)
+				.fill(Color.white)
 			
 			VStack{
 				Text("\(vm.getValue())")
-					.font(.system(size: 50, weight: .semibold, design: .default))
+					.font(.system(size: 40, weight: .semibold, design: .default))
 					.foregroundColor(vm.getNumberColor())
 
 				Text("Seconds")
@@ -31,7 +31,7 @@ struct SecondsView: View {
 					.italic()
 			}
 		}
-		.frame(width: 130, height: 130)
+		.frame(width: 100, height: 100)
     }
 	
 }
