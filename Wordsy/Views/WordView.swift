@@ -38,7 +38,7 @@ struct WordView: View {
 			}
 			
 			Button {
-				
+				vm.correctWord()
 			} label: {
 				Text("Next Word")
 					.font(.title2)

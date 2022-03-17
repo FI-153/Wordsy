@@ -43,4 +43,11 @@ class WordViewModel: ObservableObject {
 		.store(in: &cancellables)
 	}
 	
+	func correctWord(){
+		wordManager.addToTypedWords()
+		wordManager.assignCurrentWordToNextWord()
+		wordManager.removeFirstWordFromNextWords()
+		wordManager.getNewRandomWord()
+	}
+	
 }

@@ -37,10 +37,32 @@ class WordViewModelTest: XCTestCase {
 		XCTAssertEqual(wordManager.typedWords, vm.typedWords)
 	}
 	
-	func test_wordViewModel_subscribeToNextWords_thwTwoValuesAreTheSame(){
+//	func test_wordViewModel_subscribeToNextWords_thwTwoValuesAreTheSame(){
+//		//Given
+//		//When
+//		//Then
+//		XCTAssertEqual(wordManager.nextWords, vm.nextWords)
+//	}
+//	
+	func test_wordViewModel_currectWord_theArraysAdjustsAndCurrentWordIsUpdated(){
 		//Given
+		let expectedCurrentWord = wordManager.showNextWord()
+		let expectedFirstElementOfTypedWords = vm.currentWord
+		let expectedFirstElementOfNextWords = vm.nextWords[1]
 		//When
+		vm.correctWord()
 		//Then
-		XCTAssertEqual(wordManager.nextWords, vm.nextWords)
+		XCTAssertEqual(vm.currentWord, expectedCurrentWord)
+		XCTAssertEqual(vm.typedWords.first, expectedFirstElementOfTypedWords)
+		XCTAssertEqual(vm.nextWords.first, expectedFirstElementOfNextWords)
+	}
+	
+	func test_wordViewModel_currectWord_newRandomWordAddedToNextWords(){
+		//Given
+		let expectedArrayLength = vm.nextWords.count
+		//When
+		vm.correctWord()
+		//Then
+		XCTAssertEqual(vm.nextWords.count, expectedArrayLength)
 	}
 }
