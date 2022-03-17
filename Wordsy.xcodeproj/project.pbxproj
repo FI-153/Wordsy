@@ -15,10 +15,9 @@
 		A16D4FAD27E26C15004BEDCE /* WordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D4FAC27E26C15004BEDCE /* WordManager.swift */; };
 		A16D4FAE27E26C15004BEDCE /* WordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D4FAC27E26C15004BEDCE /* WordManager.swift */; };
 		A16D4FB027E26C26004BEDCE /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D4FAF27E26C26004BEDCE /* Word.swift */; };
-		A16D4FB127E26C26004BEDCE /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D4FAF27E26C26004BEDCE /* Word.swift */; };
 		A16D4FB327E27D58004BEDCE /* WordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D4FB227E27D58004BEDCE /* WordViewModel.swift */; };
-		A16D4FB427E27D58004BEDCE /* WordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D4FB227E27D58004BEDCE /* WordViewModel.swift */; };
 		A16D4FB627E28044004BEDCE /* WordViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D4FB527E28044004BEDCE /* WordViewModelTest.swift */; };
+		A1C7AA5227E3CADB009380BC /* SecondsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C7AA5127E3CADB009380BC /* SecondsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +43,7 @@
 		A16D4FAF27E26C26004BEDCE /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		A16D4FB227E27D58004BEDCE /* WordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordViewModel.swift; sourceTree = "<group>"; };
 		A16D4FB527E28044004BEDCE /* WordViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordViewModelTest.swift; sourceTree = "<group>"; };
+		A1C7AA5127E3CADB009380BC /* SecondsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +87,8 @@
 			children = (
 				A16D4F7E27E26BAC004BEDCE /* WordsyApp.swift */,
 				A16D4FAB27E26BDA004BEDCE /* Models */,
-				A16D4FA927E26BC7004BEDCE /* Views */,
+				A16D4FA927E26BC7004BEDCE /* Screens */,
+				A1C7AA4F27E3CA74009380BC /* Views */,
 				A16D4FAA27E26BD1004BEDCE /* Managers */,
 				A16D4F8227E26BAE004BEDCE /* Assets.xcassets */,
 				A16D4F8727E26BAE004BEDCE /* Wordsy.entitlements */,
@@ -113,13 +114,12 @@
 			path = WordsyTests;
 			sourceTree = "<group>";
 		};
-		A16D4FA927E26BC7004BEDCE /* Views */ = {
+		A16D4FA927E26BC7004BEDCE /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				A16D4F8027E26BAC004BEDCE /* WordView.swift */,
-				A16D4FB227E27D58004BEDCE /* WordViewModel.swift */,
+				A1C7AA5027E3CABD009380BC /* WordView */,
 			);
-			path = Views;
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		A16D4FAA27E26BD1004BEDCE /* Managers */ = {
@@ -136,6 +136,23 @@
 				A16D4FAF27E26C26004BEDCE /* Word.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		A1C7AA4F27E3CA74009380BC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A1C7AA5127E3CADB009380BC /* SecondsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A1C7AA5027E3CABD009380BC /* WordView */ = {
+			isa = PBXGroup;
+			children = (
+				A16D4F8027E26BAC004BEDCE /* WordView.swift */,
+				A16D4FB227E27D58004BEDCE /* WordViewModel.swift */,
+			);
+			path = WordView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1C7AA5227E3CADB009380BC /* SecondsView.swift in Sources */,
 				A16D4FAD27E26C15004BEDCE /* WordManager.swift in Sources */,
 				A16D4FB327E27D58004BEDCE /* WordViewModel.swift in Sources */,
 				A16D4FB027E26C26004BEDCE /* Word.swift in Sources */,
@@ -253,8 +271,6 @@
 				A16D4F9127E26BAE004BEDCE /* WordManagerTest.swift in Sources */,
 				A16D4FB627E28044004BEDCE /* WordViewModelTest.swift in Sources */,
 				A16D4FAE27E26C15004BEDCE /* WordManager.swift in Sources */,
-				A16D4FB427E27D58004BEDCE /* WordViewModel.swift in Sources */,
-				A16D4FB127E26C26004BEDCE /* Word.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
