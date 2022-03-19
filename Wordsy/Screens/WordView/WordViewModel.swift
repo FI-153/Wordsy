@@ -6,16 +6,18 @@
 //
 
 import Combine
+import Foundation
 
 class WordViewModel: ObservableObject {
 	
 	@Published var nextWords:[String] = []
 	@Published var typedWords:[String] = []
 	@Published var currentWord = ""
+	@Published var timerValue = 60
 	
 	let wordManager = WordManager()
 	var cancellables = Set<AnyCancellable>()
-	
+
 	init(){
 		subscribeToCurrentWord()
 		subscribeToTypedWords()
@@ -46,6 +48,35 @@ class WordViewModel: ObservableObject {
 	func correctWord(){
 		wordManager.addToTypedWords()
 		wordManager.assignANewWord()
+	}
+	
+	func timerValueMinusOne(){
+		timerValue = timerValue - 1
+	}
+	
+	func resetTimer(){
+		timerValue = 60
+	}
+	
+	var timer:Publishers.Autoconnect<Timer.TimerPublisher>?
+
+	func startTimer(){
+		self.timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+	}
+	
+	func stopTimer() throws {
+		
+		if let timer = self.timer {
+			timer.upstream.connect().cancel()
+			resetTimer()
+		} else {
+			throw timerError.noTimerError("There is no timer to stop")
+		}
+		
+	}
+	
+	enum timerError: Error {
+		case noTimerError(String)
 	}
 	
 }
