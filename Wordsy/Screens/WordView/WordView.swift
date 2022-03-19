@@ -16,8 +16,17 @@ struct WordView: View {
 			
 			Spacer()
 			
-			HStack{
+			HStack(spacing: 15){
+				Spacer()
 				SecondsView(value: 60)
+				
+				Spacer()
+				
+				DataRectangleView(value: 32, information: "Words/min")
+				DataRectangleView(value: 120, information: "Chars/min")
+				DataRectangleView(value: 94, information: "% acccuracy")
+				
+				Spacer()
 			}
 			
 			Group{
@@ -86,5 +95,6 @@ extension WordView {
 struct ContentView_Previews: PreviewProvider {
 	static var previews: some View {
 		WordView()
+			.preferredColorScheme(.light)
 	}
 }
