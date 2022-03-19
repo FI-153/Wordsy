@@ -5,7 +5,8 @@
 //  Created by Federico Imberti on 16/03/22.
 //
 
-import Cocoa
+import Foundation
+import SwiftUI
 
 class WordManager {
 	@Published var currentWord:String = ""
@@ -13,7 +14,7 @@ class WordManager {
 	@Published var nextWords:[String] = []
 	
 	init(){
-		self.nextWords = startingWords
+		self.nextWords = Words.startingWords
 		assignANewWord()
 	}
 	
@@ -38,7 +39,7 @@ class WordManager {
 	}
 	
 	func getNewRandomWord(){
-		nextWords.append(words.randomElement()!)
+		nextWords.append(Words.words.randomElement()!)
 	}
 	
 	func assignANewWord(){
