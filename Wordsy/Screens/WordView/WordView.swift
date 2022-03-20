@@ -18,7 +18,11 @@ struct WordView: View {
 			
 			HStack(spacing: 15){
 				Spacer()
-				SecondsView(value: 60)
+				SecondsView(value: vm.timerValue)
+				//Fix the temporary timer
+					.onReceive(vm.timer ?? Timer.publish(every: 1000, on: .main, in: .common).autoconnect()) { time in
+						vm.timerValueMinusOne()
+					}
 				
 				Spacer()
 				
@@ -48,6 +52,27 @@ struct WordView: View {
 				}
 				.buttonStyle(.bordered)
 				.tint(.green)
+				
+				Button {
+					vm.startTimer()
+				} label: {
+					Text("Start timer")
+				}
+				.buttonStyle(.bordered)
+				.tint(.green)
+				
+				Button {
+					do {
+						try vm.stopTimer()
+					} catch let error {
+						print(error.localizedDescription)
+					}
+				} label: {
+					Text("Stop timer")
+				}
+				.buttonStyle(.bordered)
+				.tint(.green)
+
 				//
 			}
 			.offset(y: 40)
