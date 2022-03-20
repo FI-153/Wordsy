@@ -10,16 +10,25 @@ import Foundation
 
 class WordViewModel: ObservableObject {
 	
-	@Published var nextWords:[String] = []
-	@Published var typedWords:[String] = []
-	@Published var currentWord:String = .empty
-	@Published var timerValue = 60
-	@Published var typedWord:String = .empty
+	private let wordManager = WordManager()
+	private var cancellables = Set<AnyCancellable>()
+	private let standardTimerValeue = 60
 	
-	let wordManager = WordManager()
-	var cancellables = Set<AnyCancellable>()
+	@Published var nextWords:[String]
+	@Published var typedWords:[String]
+	@Published var currentWord:String
+	@Published var timerValue:Int
+	@Published var timerIsRunning:Bool
+	@Published var typedWord:String
 
 	init(){
+		self.nextWords = Array()
+		self.typedWords = Array()
+		self.currentWord = .empty
+		self.typedWord = .empty
+		self.timerIsRunning = false
+		self.timerValue = standardTimerValeue
+
 		subscribeToCurrentWord()
 		subscribeToTypedWords()
 		subscribeToNextWords()
@@ -64,11 +73,13 @@ class WordViewModel: ObservableObject {
 
 	func startTimer(){
 		stopTimer()
+		timerIsRunning = true
 		timer = Timer.publish(every: 1, tolerance: 0.5, on: .main, in: .common).autoconnect()
 	}
 	
 	func stopTimer() {
 		timer.upstream.connect().cancel()
+		timerIsRunning = false
 		resetTimer()
 	}
 	
