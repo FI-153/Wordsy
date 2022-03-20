@@ -74,7 +74,7 @@ extension WordView {
 			TextField("", text: $vm.typedWord)
 				.textFieldStyle(.plain)
 				.onSubmit {
-					vm.correctWord()
+					vm.registerWord()
 				}
 				.onChange(of: vm.typedWord) { wordBeingTyped in
 					if vm.timerValue == 60 && !vm.timerIsRunning {
@@ -82,7 +82,7 @@ extension WordView {
 					}
 					
 					if wordBeingTyped == vm.currentWord.appending(" ") {
-						vm.correctWord()
+						vm.registerWord()
 					}
 				}
 		}

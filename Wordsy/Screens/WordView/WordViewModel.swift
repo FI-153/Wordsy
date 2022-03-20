@@ -55,7 +55,7 @@ class WordViewModel: ObservableObject {
 		.store(in: &cancellables)
 	}
 	
-	func correctWord(){
+	func registerWord(){
 		wordManager.addToTypedWords()
 		resetTypedWord()
 		wordManager.assignANewWord()
@@ -65,7 +65,7 @@ class WordViewModel: ObservableObject {
 		timerValue = timerValue - 1
 	}
 	
-	func resetTimer(){
+	func resetTimerValue(){
 		timerValue = 60
 	}
 	
@@ -80,7 +80,7 @@ class WordViewModel: ObservableObject {
 	func stopTimer() {
 		timer.upstream.connect().cancel()
 		timerIsRunning = false
-		resetTimer()
+		resetTimerValue()
 	}
 	
 	func resetTypedWord(){

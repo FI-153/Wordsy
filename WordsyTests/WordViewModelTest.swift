@@ -52,24 +52,24 @@ class WordViewModelTest: XCTestCase {
 		XCTAssertTrue(vm.typedWord.isEmpty)
 	}
 	
-	func test_wordViewModel_currectWord_theArraysAdjustsAndCurrentWordIsUpdated(){
+	func test_wordViewModel_registerWord_theArraysAdjustsAndCurrentWordIsUpdated(){
 		//Given
 		let expectedCurrentWord = wordManager.showNextWord()
 		let expectedFirstElementOfTypedWords = vm.currentWord
 		let expectedFirstElementOfNextWords = vm.nextWords[1]
 		//When
-		vm.correctWord()
+		vm.registerWord()
 		//Then
 		XCTAssertEqual(vm.currentWord, expectedCurrentWord)
 		XCTAssertEqual(vm.typedWords.first, expectedFirstElementOfTypedWords)
 		XCTAssertEqual(vm.nextWords.first, expectedFirstElementOfNextWords)
 	}
 	
-	func test_wordViewModel_currectWord_newRandomWordAddedToNextWords(){
+	func test_wordViewModel_registerWord_newRandomWordAddedToNextWords(){
 		//Given
 		let expectedArrayLength = vm.nextWords.count
 		//When
-		vm.correctWord()
+		vm.registerWord()
 		//Then
 		XCTAssertEqual(vm.nextWords.count, expectedArrayLength)
 	}
