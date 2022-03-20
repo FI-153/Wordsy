@@ -43,33 +43,6 @@ struct WordView: View {
 				.frame(height: 60)
 				.frame(maxWidth: .infinity)
 				.background(Color.white)
-				
-				//ONLY FOR DEVELOPMENT PURPOSES
-				Button {
-					vm.correctWord()
-				} label: {
-					Text("Next Word")
-				}
-				.buttonStyle(.bordered)
-				.tint(.green)
-				
-				Button {
-					vm.startTimer()
-				} label: {
-					Text("Start timer")
-				}
-				.buttonStyle(.bordered)
-				.tint(.green)
-				
-				Button {
-					vm.stopTimer()
-				} label: {
-					Text("Stop timer")
-				}
-				.buttonStyle(.bordered)
-				.tint(.green)
-
-				//
 			}
 			.offset(y: 40)
 			
@@ -102,6 +75,15 @@ extension WordView {
 				.textFieldStyle(.plain)
 				.onSubmit {
 					vm.correctWord()
+				}
+				.onChange(of: vm.typedWord) { wordBeingTyped in
+					if vm.timerValue == 60 && !vm.timerIsRunning {
+						vm.startTimer()
+					}
+					
+					if wordBeingTyped == vm.currentWord.appending(" ") {
+						vm.correctWord()
+					}
 				}
 		}
 		.font(.largeTitle)
