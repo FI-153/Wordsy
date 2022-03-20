@@ -18,7 +18,6 @@ class WordViewModel: ObservableObject {
 	@Published var typedWords:[String]
 	@Published var currentWord:String
 	@Published var timerValue:Int
-	@Published var timerIsRunning:Bool
 	@Published var typedWord:String
 
 	init(){
@@ -26,7 +25,6 @@ class WordViewModel: ObservableObject {
 		self.typedWords = Array()
 		self.currentWord = .empty
 		self.typedWord = .empty
-		self.timerIsRunning = false
 		self.timerValue = standardTimerValeue
 
 		subscribeToCurrentWord()
@@ -69,17 +67,14 @@ class WordViewModel: ObservableObject {
 		timerValue = 60
 	}
 	
-	var timer = Timer.publish(every: 10000, tolerance: 0.5, on: .main, in: .common).autoconnect()
-
+	let timerManager = TimerManager.getShared()
+	
 	func startTimer(){
-		stopTimer()
-		timerIsRunning = true
-		timer = Timer.publish(every: 1, tolerance: 0.5, on: .main, in: .common).autoconnect()
+		timerManager.startTimer()
 	}
 	
 	func stopTimer() {
-		timer.upstream.connect().cancel()
-		timerIsRunning = false
+		timerManager.stopTimer()
 		resetTimerValue()
 	}
 	

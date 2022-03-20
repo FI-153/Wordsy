@@ -20,7 +20,7 @@ struct WordView: View {
 				Spacer()
 				SecondsView(value: $vm.timerValue)
 				//Fix the temporary timer
-					.onReceive(vm.timer) { time in
+					.onReceive(vm.timerManager.timer) { time in
 						vm.timerValueMinusOne()
 					}
 				
@@ -77,7 +77,7 @@ extension WordView {
 					vm.registerWord()
 				}
 				.onChange(of: vm.typedWord) { wordBeingTyped in
-					if vm.timerValue == 60 && !vm.timerIsRunning {
+					if vm.timerValue == 60 && !vm.timerManager.timerIsRunning {
 						vm.startTimer()
 					}
 					
