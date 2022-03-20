@@ -94,9 +94,19 @@ extension WordView {
 	}
 	
 	private var currentWordSection: some View{
-		Text(vm.currentWord)
-			.font(.largeTitle)
-			.foregroundColor(.secondary)
+		ZStack {
+			Text(vm.currentWord)
+				.font(.largeTitle)
+				.foregroundColor(.secondary.opacity(0.5))
+				.frame(maxWidth: .infinity)
+			
+			TextField("", text: $vm.typedWord)
+				.font(.largeTitle)
+				.textFieldStyle(.plain)
+				.frame(maxWidth: .infinity)
+
+		}
+		.fixedSize(horizontal: true, vertical: true)
 	}
 	
 	private var nextWordSection: some View{
