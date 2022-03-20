@@ -43,7 +43,15 @@ class WordViewModelTest: XCTestCase {
 //		//Then
 //		XCTAssertEqual(wordManager.nextWords, vm.nextWords)
 //	}
-//	
+//
+	
+	func test_wordViewModel_init_teTypedWordIsEmpty(){
+		//Given
+		//When
+		//Then
+		XCTAssertTrue(vm.typedWord.isEmpty)
+	}
+	
 	func test_wordViewModel_currectWord_theArraysAdjustsAndCurrentWordIsUpdated(){
 		//Given
 		let expectedCurrentWord = wordManager.showNextWord()
@@ -64,5 +72,22 @@ class WordViewModelTest: XCTestCase {
 		vm.correctWord()
 		//Then
 		XCTAssertEqual(vm.nextWords.count, expectedArrayLength)
+	}
+	
+	func test_wordViewModel_timerValueMinusOne_theTimerValueIsDecreasedByOne(){
+		//Given
+		let previosTimerValueMinusOne = vm.timerValue - 1
+		//When
+		vm.timerValueMinusOne()
+		//Then
+		XCTAssertEqual(vm.timerValue, previosTimerValueMinusOne)
+	}
+	
+	func test_wordViewModel_resetTypedWord_theTypedWordIsResetted(){
+		//Given
+		//When
+		vm.resetTypedWord()
+		//Then
+		XCTAssertTrue(vm.typedWord.isEmpty)
 	}
 }

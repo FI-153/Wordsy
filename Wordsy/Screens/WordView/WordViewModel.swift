@@ -48,6 +48,7 @@ class WordViewModel: ObservableObject {
 	
 	func correctWord(){
 		wordManager.addToTypedWords()
+		resetTypedWord()
 		wordManager.assignANewWord()
 	}
 	
@@ -71,8 +72,8 @@ class WordViewModel: ObservableObject {
 		resetTimer()
 	}
 	
-	enum timerError: Error {
-		case noTimerError(String)
+	func resetTypedWord(){
+		typedWord = .empty
 	}
 	
 }
