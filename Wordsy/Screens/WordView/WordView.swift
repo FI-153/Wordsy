@@ -17,20 +17,17 @@ struct WordView: View {
 			Spacer()
 			
 			HStack(spacing: 15){
-				Spacer()
+				
 				SecondsView(value: $vm.timerValue)
-				//Fix the temporary timer
 					.onReceive(vm.timerManager.timer) { time in
 						vm.timerValueMinusOne()
 					}
-				
-				Spacer()
+					.padding(.trailing, 40)
 				
 				DataRectangleView(value: 32, information: "Words/min")
 				DataRectangleView(value: 120, information: "Chars/min")
 				DataRectangleView(value: 94, information: "% acccuracy")
 				
-				Spacer()
 			}
 			
 			Group{
@@ -40,7 +37,7 @@ struct WordView: View {
 					nextWordSection
 				}
 				.font(.title2)
-				.frame(height: 60)
+				.frame(height: 80)
 				.frame(maxWidth: .infinity)
 				.background(Color.white)
 			}
@@ -50,7 +47,7 @@ struct WordView: View {
 			Spacer()
 			
 		}
-		.frame(width: 700, height: 500, alignment: .center)
+		.frame(width: 1000, height: 700, alignment: .center)
 	}
 }
 
