@@ -18,9 +18,9 @@ struct WordView: View {
 			
 			HStack(spacing: 15){
 				Spacer()
-				SecondsView(value: vm.timerValue)
+				SecondsView(value: $vm.timerValue)
 				//Fix the temporary timer
-					.onReceive(vm.timer ?? Timer.publish(every: 1000, on: .main, in: .common).autoconnect()) { time in
+					.onReceive(vm.timer) { time in
 						vm.timerValueMinusOne()
 					}
 				

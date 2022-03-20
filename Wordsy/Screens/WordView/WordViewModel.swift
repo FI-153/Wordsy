@@ -58,21 +58,16 @@ class WordViewModel: ObservableObject {
 		timerValue = 60
 	}
 	
-	var timer:Publishers.Autoconnect<Timer.TimerPublisher>?
+	var timer = Timer.publish(every: 10000, tolerance: 0.5, on: .main, in: .common).autoconnect()
 
 	func startTimer(){
-		self.timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+		stopTimer()
+		timer = Timer.publish(every: 1, tolerance: 0.5, on: .main, in: .common).autoconnect()
 	}
 	
-	func stopTimer() throws {
-		
-		if let timer = self.timer {
-			timer.upstream.connect().cancel()
-			resetTimer()
-		} else {
-			throw timerError.noTimerError("There is no timer to stop")
-		}
-		
+	func stopTimer() {
+		timer.upstream.connect().cancel()
+		resetTimer()
 	}
 	
 	enum timerError: Error {

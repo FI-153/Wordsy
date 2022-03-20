@@ -9,21 +9,17 @@ import SwiftUI
 
 struct SecondsView: View {
 	
-	@StateObject private var vm:SecondsViewModel
-	
-	init(value:Int) {
-		_vm = .init(wrappedValue: SecondsViewModel(value: value))
-	}
-	
+	@Binding var value:Int
+
     var body: some View {
 		ZStack{
 			Circle()
 				.fill(Color.white)
 			
 			VStack{
-				Text("\(vm.getValue())")
+				Text("\(value)")
 					.font(.system(size: 40, weight: .semibold, design: .default))
-					.foregroundColor(vm.getNumberColor())
+					.foregroundColor(getNumberColor())
 
 				Text("Seconds")
 					.font(.system(size: 15, weight: .light, design: .default))
@@ -34,29 +30,16 @@ struct SecondsView: View {
 		.frame(width: 100, height: 100)
     }
 	
-}
-
-class SecondsViewModel: ObservableObject{
-	var value:Int
-	
-	init(value:Int) {
-		self.value = value
-	}
-	
-	func getValue() -> Int {
-		value
-	}
-	
 	func getNumberColor() -> Color {
 		if value <= 3 {
 			return .red
 		} else if value <= 10 {
 			return .orange
 		}
-		
+
 		return .black
 	}
-
+	
 }
 
 struct SecondsView_Previews: PreviewProvider {
@@ -64,23 +47,23 @@ struct SecondsView_Previews: PreviewProvider {
 		
 		VStack {
 			HStack{
-				SecondsView(value: 60)
-				
-				SecondsView(value: 60)
+				SecondsView(value: .constant(60))
+
+				SecondsView(value: .constant(60))
 					.preferredColorScheme(.dark)
 			}
-			
+
 			HStack{
-				SecondsView(value: 10)
-				
-				SecondsView(value: 10)
+				SecondsView(value: .constant(10))
+
+				SecondsView(value: .constant(10))
 					.preferredColorScheme(.dark)
 			}
-			
+
 			HStack{
-				SecondsView(value: 3)
-				
-				SecondsView(value: 3)
+				SecondsView(value: .constant(3))
+
+				SecondsView(value: .constant(3))
 					.preferredColorScheme(.dark)
 			}
 
