@@ -12,8 +12,9 @@ class WordViewModel: ObservableObject {
 	
 	@Published var nextWords:[String] = []
 	@Published var typedWords:[String] = []
-	@Published var currentWord = ""
+	@Published var currentWord:String = .empty
 	@Published var timerValue = 60
+	@Published var typedWord:String = .empty
 	
 	let wordManager = WordManager()
 	var cancellables = Set<AnyCancellable>()

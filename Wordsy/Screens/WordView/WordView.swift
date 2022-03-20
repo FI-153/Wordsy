@@ -62,11 +62,7 @@ struct WordView: View {
 				.tint(.green)
 				
 				Button {
-					do {
-						try vm.stopTimer()
-					} catch let error {
-						print(error.localizedDescription)
-					}
+					vm.stopTimer()
 				} label: {
 					Text("Stop timer")
 				}
