@@ -95,17 +95,14 @@ extension WordView {
 	
 	private var currentWordSection: some View{
 		ZStack {
-			Text(vm.currentWord)
-				.font(.largeTitle)
-				.foregroundColor(.secondary.opacity(0.5))
-				.frame(maxWidth: .infinity)
-			
-			TextField("", text: $vm.typedWord)
-				.font(.largeTitle)
-				.textFieldStyle(.plain)
-				.frame(maxWidth: .infinity)
+			Text(vm.currentWord.appending(" "))
+				.foregroundColor(.secondary)
 
+			TextField("", text: $vm.typedWord)
+				.textFieldStyle(.plain)
 		}
+		.font(.largeTitle)
+		.frame(maxWidth: .infinity)
 		.fixedSize(horizontal: true, vertical: true)
 	}
 	
