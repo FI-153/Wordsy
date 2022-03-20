@@ -100,6 +100,9 @@ extension WordView {
 
 			TextField("", text: $vm.typedWord)
 				.textFieldStyle(.plain)
+				.onSubmit {
+					vm.correctWord()
+				}
 		}
 		.font(.largeTitle)
 		.frame(maxWidth: .infinity)
