@@ -100,6 +100,24 @@ class WordManagerTest: XCTestCase {
 
 	}
 	
+	func test_WordManager_setAsCorrectlyTyped_theCurrentWordIsSetAsCorrectlyTyped(){
+		//Given
+		//Given
+		wordManager.setAsCorrectlyTyped()
+		//Then
+		XCTAssertTrue(wordManager.currentWord.wasTypedCorrecly)
+	}
+	
+	func test_WordManager_setAsCorrectlyTyped_theWordAddedtoTheTypedWordsIsSetAsCorrectlyType(){
+		//Given
+		wordManager.currentWord = Word("abc")
+		wordManager.setAsCorrectlyTyped()
+		//When
+		wordManager.assignANewWord()
+		//Then
+		XCTAssertTrue(wordManager.typedWords.first!.wasTypedCorrecly)
+	}
+	
 	func assertEmpty <T> (array:[T]){
 		XCTAssertTrue(array.isEmpty)
 	}

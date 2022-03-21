@@ -74,6 +74,24 @@ class WordViewModelTest: XCTestCase {
 		XCTAssertEqual(vm.nextWords.count, expectedArrayLength)
 	}
 	
+	func test_wordViewModel_isTypedWordCorrect_theTypedWordIsCorrect(){
+		//Given
+		vm.currentWord = Word("abc")
+		//When
+		vm.typedWord = "abc"
+		//Then
+		XCTAssertTrue(vm.isTypedWordCorrect())
+	}
+	
+	func test_wordViewModel_isTypedWordCorrect_theTypedWordIsNotCorrect(){
+		//Given
+		vm.currentWord = Word("abc")
+		//When
+		vm.typedWord = "abd"
+		//Then
+		XCTAssertFalse(vm.isTypedWordCorrect())
+	}
+	
 	func test_wordViewModel_timerValueMinusOne_theTimerValueIsDecreasedByOne(){
 		//Given
 		let previosTimerValueMinusOne = vm.timerValue - 1

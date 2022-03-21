@@ -54,9 +54,12 @@ class WordViewModel: ObservableObject {
 	}
 	
 	func registerWord(){
-		wordManager.addToTypedWords()
 		resetTypedWord()
 		wordManager.assignANewWord()
+	}
+	
+	func isTypedWordCorrect() -> Bool {
+		return typedWord == currentWord.value
 	}
 	
 	func timerValueMinusOne(){

@@ -10,19 +10,19 @@ import Foundation
 struct Word: Identifiable, Hashable{
 	
 	let value:String
-	let wasTypedCorrecly:Bool
+	var wasTypedCorrecly:Bool
 	let id:UUID
 	
 	init(_ value:String){
 		self.id = UUID()
 		self.value = value
-		self.wasTypedCorrecly = true
+		self.wasTypedCorrecly = false
 	}
 	
 	static func == (lhs: Word, rhs: Word) -> Bool {
-		lhs.id == rhs.id
+		lhs.value == rhs.value
 	}
-	
+		
 	static let words:[Word] = [
 		Word("Commander"),
 		Word("Leutenant"),

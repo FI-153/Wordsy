@@ -43,9 +43,15 @@ class WordManager {
 	}
 	
 	func assignANewWord(){
+		if !currentWord.value.isEmpty {
+			addToTypedWords()
+		}
 		assignCurrentWordToNextWord()
 		removeFirstWordFromNextWords()
 		getNewRandomWord()
 	}
 	
+	func setAsCorrectlyTyped(){
+		self.currentWord.wasTypedCorrecly = true
+	}
 }
