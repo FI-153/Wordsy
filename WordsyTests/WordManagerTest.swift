@@ -25,8 +25,8 @@ class WordManagerTest: XCTestCase {
 		//When
 		//Then
 		assertEmpty(array: wordManager.typedWords)
-		XCTAssertEqual(wordManager.nextWords.count, Words.startingWords.count)
-		XCTAssertEqual(wordManager.currentWord, Words.startingWords.first!)
+		XCTAssertEqual(wordManager.nextWords.count, Word.startingWords.count)
+		XCTAssertEqual(wordManager.currentWord, Word.startingWords.first!)
 	}
 	
 	func test_WordManager_showNextWord_theNextWordIsIssued(){

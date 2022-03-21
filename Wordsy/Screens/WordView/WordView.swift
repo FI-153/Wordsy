@@ -54,8 +54,8 @@ struct WordView: View {
 extension WordView {
 	private var typedWordSection: some View {
 		HStack{
-			ForEach(vm.typedWords, id: \.self) { word in
-				Text(word)
+			ForEach(vm.typedWords) { word in
+				Text(word.value)
 					.foregroundColor(.black)
 			}
 		}
@@ -65,7 +65,7 @@ extension WordView {
 	
 	private var currentWordSection: some View{
 		ZStack {
-			Text(vm.currentWord.appending(" "))
+			Text(vm.currentWord.value.appending(" "))
 				.foregroundColor(.secondary)
 
 			TextField("", text: $vm.typedWord)
@@ -78,7 +78,7 @@ extension WordView {
 						vm.startTimer()
 					}
 					
-					if wordBeingTyped == vm.currentWord.appending(" ") {
+					if wordBeingTyped == vm.currentWord.value.appending(" ") {
 						vm.registerWord()
 					}
 				}
@@ -91,7 +91,7 @@ extension WordView {
 	private var nextWordSection: some View{
 		HStack{
 			ForEach(vm.nextWords, id: \.self) { word in
-				Text(word)
+				Text(word.value)
 					.foregroundColor(.black)
 			}
 		}

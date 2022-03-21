@@ -14,16 +14,16 @@ class WordViewModel: ObservableObject {
 	private var cancellables = Set<AnyCancellable>()
 	private let standardTimerValeue = 60
 	
-	@Published var nextWords:[String]
-	@Published var typedWords:[String]
-	@Published var currentWord:String
+	@Published var nextWords:[Word]
+	@Published var typedWords:[Word]
+	@Published var currentWord:Word
 	@Published var timerValue:Int
 	@Published var typedWord:String
 
 	init(){
 		self.nextWords = Array()
 		self.typedWords = Array()
-		self.currentWord = .empty
+		self.currentWord = Word(.empty)
 		self.typedWord = .empty
 		self.timerValue = standardTimerValeue
 

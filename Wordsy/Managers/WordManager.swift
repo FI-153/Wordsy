@@ -9,16 +9,16 @@ import Foundation
 import SwiftUI
 
 class WordManager {
-	@Published var currentWord:String = ""
-	@Published var typedWords:[String] = []
-	@Published var nextWords:[String] = []
+	@Published var currentWord:Word = Word(.empty)
+	@Published var typedWords:[Word] = []
+	@Published var nextWords:[Word] = []
 	
 	init(){
-		self.nextWords = Words.startingWords
+		self.nextWords = Word.startingWords
 		assignANewWord()
 	}
 	
-	func showNextWord() -> String {
+	func showNextWord() -> Word {
 		return nextWords.first!
 	}
 	
@@ -39,7 +39,7 @@ class WordManager {
 	}
 	
 	func getNewRandomWord(){
-		nextWords.append(Words.words.randomElement()!)
+		nextWords.append(Word.words.randomElement()!)
 	}
 	
 	func assignANewWord(){
