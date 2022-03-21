@@ -71,6 +71,9 @@ extension WordView {
 			TextField("", text: $vm.typedWord)
 				.textFieldStyle(.plain)
 				.onSubmit {
+					if vm.timerValue == 60 && !vm.timerManager.timerIsRunning {
+						vm.startTimer()
+					}
 					vm.registerWord()
 				}
 				.onChange(of: vm.typedWord) { wordBeingTyped in
