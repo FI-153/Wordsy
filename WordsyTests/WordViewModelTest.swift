@@ -108,4 +108,9 @@ class WordViewModelTest: XCTestCase {
 		//Then
 		XCTAssertTrue(vm.typedWord.isEmpty)
 	}
+	
+	func test_wordViewModel_setAsCorrectlyTyped_theWordIsSetAsCorrectlyTyped(){
+		vm.setAsCorrectlyTyped()
+		XCTAssertTrue(vm.currentWord.wasTypedCorrecly)
+	}
 }

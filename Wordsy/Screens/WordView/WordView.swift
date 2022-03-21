@@ -74,6 +74,11 @@ extension WordView {
 					if vm.timerValue == 60 && !vm.timerManager.timerIsRunning {
 						vm.startTimer()
 					}
+					
+					if vm.isTypedWordCorrect() {
+						vm.setAsCorrectlyTyped()
+					}
+					
 					vm.registerWord()
 				}
 				.onChange(of: vm.typedWord) { wordBeingTyped in

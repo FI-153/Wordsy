@@ -85,4 +85,8 @@ class WordViewModel: ObservableObject {
 		typedWord = .empty
 	}
 	
+	func setAsCorrectlyTyped(){
+		wordManager.setAsCorrectlyTyped()
+	}
+	
 }
