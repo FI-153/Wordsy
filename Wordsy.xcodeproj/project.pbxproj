@@ -16,6 +16,8 @@
 		A16D4FB027E26C26004BEDCE /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D4FAF27E26C26004BEDCE /* Word.swift */; };
 		A16D4FB327E27D58004BEDCE /* WordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D4FB227E27D58004BEDCE /* WordViewModel.swift */; };
 		A16D4FB627E28044004BEDCE /* WordViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D4FB527E28044004BEDCE /* WordViewModelTest.swift */; };
+		A1ABE04D27E905000049EC6C /* ScoreManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1ABE04C27E905000049EC6C /* ScoreManger.swift */; };
+		A1ABE04F27E905BD0049EC6C /* ScoreManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1ABE04E27E905BD0049EC6C /* ScoreManagerTests.swift */; };
 		A1C7AA5227E3CADB009380BC /* SecondsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C7AA5127E3CADB009380BC /* SecondsView.swift */; };
 		A1E9E03527E78F8B00CBDD6E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E9E03427E78F8B00CBDD6E /* Extensions.swift */; };
 		A1F1E31C27E7BE43005D6144 /* WordManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D4F9027E26BAE004BEDCE /* WordManagerTest.swift */; };
@@ -47,6 +49,8 @@
 		A16D4FAF27E26C26004BEDCE /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		A16D4FB227E27D58004BEDCE /* WordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordViewModel.swift; sourceTree = "<group>"; };
 		A16D4FB527E28044004BEDCE /* WordViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordViewModelTest.swift; sourceTree = "<group>"; };
+		A1ABE04C27E905000049EC6C /* ScoreManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreManger.swift; sourceTree = "<group>"; };
+		A1ABE04E27E905BD0049EC6C /* ScoreManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreManagerTests.swift; sourceTree = "<group>"; };
 		A1C7AA5127E3CADB009380BC /* SecondsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondsView.swift; sourceTree = "<group>"; };
 		A1E9E03427E78F8B00CBDD6E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A1F1E31D27E7C657005D6144 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
@@ -119,6 +123,7 @@
 				A16D4F9027E26BAE004BEDCE /* WordManagerTest.swift */,
 				A16D4FB527E28044004BEDCE /* WordViewModelTest.swift */,
 				A1F1E31F27E7C7F6005D6144 /* TimerManagerTests.swift */,
+				A1ABE04E27E905BD0049EC6C /* ScoreManagerTests.swift */,
 			);
 			path = WordsyTests;
 			sourceTree = "<group>";
@@ -136,6 +141,7 @@
 			children = (
 				A16D4FAC27E26C15004BEDCE /* WordManager.swift */,
 				A1F1E31D27E7C657005D6144 /* TimerManager.swift */,
+				A1ABE04C27E905000049EC6C /* ScoreManger.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -270,6 +276,7 @@
 				A109F9BA27E539EE004DE4AA /* DataRectangleView.swift in Sources */,
 				A16D4FAD27E26C15004BEDCE /* WordManager.swift in Sources */,
 				A1E9E03527E78F8B00CBDD6E /* Extensions.swift in Sources */,
+				A1ABE04D27E905000049EC6C /* ScoreManger.swift in Sources */,
 				A16D4FB327E27D58004BEDCE /* WordViewModel.swift in Sources */,
 				A16D4FB027E26C26004BEDCE /* Word.swift in Sources */,
 				A1F1E31E27E7C657005D6144 /* TimerManager.swift in Sources */,
@@ -282,6 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1ABE04F27E905BD0049EC6C /* ScoreManagerTests.swift in Sources */,
 				A1F1E32027E7C7F6005D6144 /* TimerManagerTests.swift in Sources */,
 				A16D4FB627E28044004BEDCE /* WordViewModelTest.swift in Sources */,
 				A1F1E31C27E7BE43005D6144 /* WordManagerTest.swift in Sources */,
