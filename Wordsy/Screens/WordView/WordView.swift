@@ -24,9 +24,9 @@ struct WordView: View {
 					}
 					.padding(.trailing, 40)
 				
-				DataRectangleView(value: 32, information: "Words/min")
-				DataRectangleView(value: 120, information: "Chars/min")
-				DataRectangleView(value: 94, information: "% acccuracy")
+				DataRectangleView(value: $vm.wordsPerMinute, information: "Words/min")
+				DataRectangleView(value: $vm.charsPerMinute, information: "Chars/min")
+				DataRectangleView(value: $vm.precision, information: "% acccuracy")
 				
 			}
 			
@@ -71,21 +71,22 @@ extension WordView {
 			TextField("", text: $vm.typedWord)
 				.textFieldStyle(.plain)
 				.onSubmit {
-					if vm.timerValue == 60 && !vm.timerManager.timerIsRunning {
-						vm.startTimer()
-					}
 					
+					vm.startTimerIfNoneAreActive()
+					
+					//When the word is typed correctly
 					if vm.isTypedWordCorrect() {
 						vm.setAsCorrectlyTyped()
 					}
 					
+					//Show the next word
 					vm.registerWord()
 				}
 				.onChange(of: vm.typedWord) { wordBeingTyped in
-					if vm.timerValue == 60 && !vm.timerManager.timerIsRunning {
-						vm.startTimer()
-					}
 					
+					vm.startTimerIfNoneAreActive()
+					
+					//If the word has been typed correctly with the space in the end register it
 					if wordBeingTyped == vm.currentWord.value.appending(" ") {
 						vm.registerWord()
 					}

@@ -84,5 +84,18 @@ class ScoreManagerTests: XCTestCase {
 		//Then
 		XCTAssertEqual(Float(33), scoreManager.precision)
 	}
+	
+	func test_ScoreManager_updatePrecision_precisionIsZero(){
+		//Given
+		var word = Word("abc")
+		var words:[Word] = []
+		word.wasTypedCorrecly = false
+		words.append(word)
+		//When
+		scoreManager.updatePrecision(for: words)
+		//Then
+		XCTAssertEqual(0, scoreManager.precision)
+
+	}
 
 }

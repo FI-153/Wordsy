@@ -9,57 +9,35 @@ import SwiftUI
 
 struct DataRectangleView: View {
 	
-	@State private var vm:DataRectangleViewModel
-	
-	init(value:Int, information:String) {
-		_vm = .init(wrappedValue: DataRectangleViewModel(value: value, information: information))
-	}
-	
+	@Binding var value:Int
+	var information:String
+
 	var body: some View {
 			ZStack{
 				RoundedRectangle(cornerRadius: 15)
 					.fill(Color.white)
 				
 				VStack{
-					Text("\(vm.getValue())")
+					Text("\(value)")
 						.font(.system(size: 40, weight: .semibold, design: .default))
 						.foregroundColor(.black)
 					
-					Text("\(vm.getInformation())")
+					Text("\(information)")
 						.font(.system(size: 15, weight: .light, design: .default))
 						.foregroundColor(.black)
 						.italic()
 				}
 			}
 			.frame(width: 100, height: 100)
-			
-	}
-}
-
-class DataRectangleViewModel: ObservableObject {
-	@Published var value:Int
-	@Published var information:String
-	
-	init(value:Int, information:String){
-		self.value = value
-		self.information = information
-	}
-	
-	func getValue() -> Int {
-		self.value
-	}
-	
-	func getInformation() -> String {
-		self.information
 	}
 }
 
 struct DataRectangleView_Previews: PreviewProvider {
     static var previews: some View {
 		HStack {
-			DataRectangleView(value: 32, information: "Words/min")
-			DataRectangleView(value: 120, information: "Chars/min")
-			DataRectangleView(value: 94, information: "% acccuracy")
+			DataRectangleView(value: .constant(32), information: "Words/min")
+			DataRectangleView(value: .constant(120), information: "Chars/min")
+			DataRectangleView(value: .constant(94), information: "% acccuracy")
 		}
     }
 }

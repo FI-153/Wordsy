@@ -11,6 +11,7 @@ import Foundation
 class WordViewModel: ObservableObject {
 	
 	private let wordManager = WordManager()
+	private let scoreManager = ScoreManager.getShared()
 	private var cancellables = Set<AnyCancellable>()
 	private let standardTimerValeue = 60
 	
@@ -19,6 +20,9 @@ class WordViewModel: ObservableObject {
 	@Published var currentWord:Word
 	@Published var timerValue:Int
 	@Published var typedWord:String
+	@Published var wordsPerMinute:Int
+	@Published var charsPerMinute:Int
+	@Published var precision:Int
 
 	init(){
 		self.nextWords = Array()
@@ -26,10 +30,16 @@ class WordViewModel: ObservableObject {
 		self.currentWord = Word(.empty)
 		self.typedWord = .empty
 		self.timerValue = standardTimerValeue
+		self.wordsPerMinute = 0
+		self.charsPerMinute = 0
+		self.precision = 100
 
 		subscribeToCurrentWord()
 		subscribeToTypedWords()
 		subscribeToNextWords()
+		subscribeToWordsPerMinute()
+		subscribeToCharsPerMinute()
+		subscribeToPrecision()
 	}
 	
 	func subscribeToCurrentWord(){
@@ -53,6 +63,27 @@ class WordViewModel: ObservableObject {
 		.store(in: &cancellables)
 	}
 	
+	func subscribeToWordsPerMinute(){
+		scoreManager.$wordsPerMinute.sink { newValue in
+			self.wordsPerMinute = Int(newValue)
+		}
+		.store(in: &cancellables)
+	}
+	
+	func subscribeToCharsPerMinute(){
+		scoreManager.$charsPerMinute.sink { newValue in
+			self.charsPerMinute = newValue
+		}
+		.store(in: &cancellables)
+	}
+	
+	func subscribeToPrecision(){
+		scoreManager.$precision.sink { newValue in
+			self.precision = Int(newValue)
+		}
+		.store(in: &cancellables)
+	}
+	
 	func registerWord(){
 		resetTypedWord()
 		wordManager.assignANewWord()
@@ -72,8 +103,8 @@ class WordViewModel: ObservableObject {
 	
 	let timerManager = TimerManager.getShared()
 	
-	func startTimer(){
-		timerManager.startTimer()
+	func startTimerIfNoneAreActive(){
+		if timerValue == 60 && !timerManager.timerIsRunning { timerManager.startTimer() }
 	}
 	
 	func stopTimer() {
@@ -87,6 +118,12 @@ class WordViewModel: ObservableObject {
 	
 	func setAsCorrectlyTyped(){
 		wordManager.setAsCorrectlyTyped()
+	}
+	
+	func updateScore() {
+		scoreManager.increaseWordsPerMinute()
+		scoreManager.increaseCharsPerMinute(with: currentWord.value)
+		scoreManager.updatePrecision(for: typedWords)
 	}
 	
 }

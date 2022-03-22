@@ -10,7 +10,7 @@ import Combine
 
 class TimerManager{
 	
-	var timer = Timer.publish(every: 10000, tolerance: 0.5, on: .main, in: .common).autoconnect()
+	var timer = Timer.publish(every: 10000, on: .main, in: .common).autoconnect()
 	var timerIsRunning:Bool = false
 	
 	static let shared = TimerManager()
@@ -23,7 +23,7 @@ class TimerManager{
 	func startTimer(){
 		stopTimer()
 		timerIsRunning = true
-		timer = Timer.publish(every: 1, tolerance: 0.5, on: .main, in: .common).autoconnect()
+		timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 	}
 	
 	func stopTimer() {
