@@ -126,4 +126,15 @@ class WordViewModel: ObservableObject {
 		scoreManager.updatePrecision(for: typedWords)
 	}
 	
+	func registerCorrectWord(){
+		setAsCorrectlyTyped()
+		registerWord()
+		updateScore()
+	}
+	
+	func registerWrongWord(){
+		registerWord()
+		updateScore()
+	}
+	
 }

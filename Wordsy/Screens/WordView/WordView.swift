@@ -74,21 +74,18 @@ extension WordView {
 					
 					vm.startTimerIfNoneAreActive()
 					
-					//When the word is typed correctly
 					if vm.isTypedWordCorrect() {
-						vm.setAsCorrectlyTyped()
+						vm.registerCorrectWord()
+					} else {
+						vm.registerWrongWord()
 					}
-					
-					//Show the next word
-					vm.registerWord()
 				}
 				.onChange(of: vm.typedWord) { wordBeingTyped in
 					
 					vm.startTimerIfNoneAreActive()
 					
-					//If the word has been typed correctly with the space in the end register it
 					if wordBeingTyped == vm.currentWord.value.appending(" ") {
-						vm.registerWord()
+						vm.registerCorrectWord()
 					}
 				}
 		}
