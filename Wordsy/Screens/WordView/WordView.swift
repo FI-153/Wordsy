@@ -55,8 +55,14 @@ extension WordView {
 	private var typedWordSection: some View {
 		HStack{
 			ForEach(vm.typedWords) { word in
-				Text(word.value)
-					.foregroundColor(.black)
+				if word.wasTypedCorrecly {
+					Text(word.value)
+						.foregroundColor(.green.opacity(0.7))
+				} else {
+					Text(word.value)
+						.foregroundColor(.red.opacity(0.7))
+						.strikethrough()
+				}
 			}
 		}
 		.fixedSize(horizontal: true, vertical: false)
