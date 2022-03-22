@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A109F9BA27E539EE004DE4AA /* DataRectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A109F9B927E539EE004DE4AA /* DataRectangleView.swift */; };
+		A15C207E27EA5ADC000528B3 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15C207D27EA5ADC000528B3 /* SettingView.swift */; };
+		A15C208027EA5D47000528B3 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15C207F27EA5D47000528B3 /* ButtonView.swift */; };
 		A16D4F7F27E26BAC004BEDCE /* WordsyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D4F7E27E26BAC004BEDCE /* WordsyApp.swift */; };
 		A16D4F8127E26BAC004BEDCE /* WordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D4F8027E26BAC004BEDCE /* WordView.swift */; };
 		A16D4F8327E26BAE004BEDCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A16D4F8227E26BAE004BEDCE /* Assets.xcassets */; };
@@ -37,6 +39,8 @@
 
 /* Begin PBXFileReference section */
 		A109F9B927E539EE004DE4AA /* DataRectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRectangleView.swift; sourceTree = "<group>"; };
+		A15C207D27EA5ADC000528B3 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		A15C207F27EA5D47000528B3 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		A16D4F7B27E26BAC004BEDCE /* Wordsy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wordsy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A16D4F7E27E26BAC004BEDCE /* WordsyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsyApp.swift; sourceTree = "<group>"; };
 		A16D4F8027E26BAC004BEDCE /* WordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordView.swift; sourceTree = "<group>"; };
@@ -75,6 +79,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A15C207C27EA5AC0000528B3 /* SettingView */ = {
+			isa = PBXGroup;
+			children = (
+				A15C207D27EA5ADC000528B3 /* SettingView.swift */,
+			);
+			path = SettingView;
+			sourceTree = "<group>";
+		};
 		A16D4F7227E26BAC004BEDCE = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				A1C7AA5027E3CABD009380BC /* WordView */,
+				A15C207C27EA5AC0000528B3 /* SettingView */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -159,6 +172,7 @@
 			children = (
 				A1C7AA5127E3CADB009380BC /* SecondsView.swift */,
 				A109F9B927E539EE004DE4AA /* DataRectangleView.swift */,
+				A15C207F27EA5D47000528B3 /* ButtonView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -274,6 +288,7 @@
 			files = (
 				A1C7AA5227E3CADB009380BC /* SecondsView.swift in Sources */,
 				A109F9BA27E539EE004DE4AA /* DataRectangleView.swift in Sources */,
+				A15C208027EA5D47000528B3 /* ButtonView.swift in Sources */,
 				A16D4FAD27E26C15004BEDCE /* WordManager.swift in Sources */,
 				A1E9E03527E78F8B00CBDD6E /* Extensions.swift in Sources */,
 				A1ABE04D27E905000049EC6C /* ScoreManger.swift in Sources */,
@@ -282,6 +297,7 @@
 				A1F1E31E27E7C657005D6144 /* TimerManager.swift in Sources */,
 				A16D4F8127E26BAC004BEDCE /* WordView.swift in Sources */,
 				A16D4F7F27E26BAC004BEDCE /* WordsyApp.swift in Sources */,
+				A15C207E27EA5ADC000528B3 /* SettingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

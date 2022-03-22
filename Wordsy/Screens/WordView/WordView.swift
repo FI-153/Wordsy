@@ -44,6 +44,9 @@ struct WordView: View {
 			.offset(y: 40)
 			
 			Spacer()
+				
+			SettingView()
+
 			Spacer()
 			
 		}
