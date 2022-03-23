@@ -34,10 +34,6 @@ struct BackgroundView: View {
 	}
 }
 
-extension Color {
-	static let bgYellow = Color.init(red: 0.8833333253860474, green: 0.7950000762939453, blue: 0)
-}
-
 struct BackgroundView_Previews: PreviewProvider {
     static var previews: some View {
         BackgroundView()
