@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A109F9BA27E539EE004DE4AA /* DataRectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A109F9B927E539EE004DE4AA /* DataRectangleView.swift */; };
+		A159B36227EBA53700369947 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A159B36127EBA53700369947 /* BackgroundView.swift */; };
 		A15C207E27EA5ADC000528B3 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15C207D27EA5ADC000528B3 /* SettingView.swift */; };
 		A15C208027EA5D47000528B3 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15C207F27EA5D47000528B3 /* ButtonView.swift */; };
 		A16D4F7F27E26BAC004BEDCE /* WordsyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D4F7E27E26BAC004BEDCE /* WordsyApp.swift */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		A109F9B927E539EE004DE4AA /* DataRectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRectangleView.swift; sourceTree = "<group>"; };
+		A159B36127EBA53700369947 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		A15C207D27EA5ADC000528B3 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		A15C207F27EA5D47000528B3 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		A16D4F7B27E26BAC004BEDCE /* Wordsy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wordsy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -173,6 +175,7 @@
 				A1C7AA5127E3CADB009380BC /* SecondsView.swift */,
 				A109F9B927E539EE004DE4AA /* DataRectangleView.swift */,
 				A15C207F27EA5D47000528B3 /* ButtonView.swift */,
+				A159B36127EBA53700369947 /* BackgroundView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 			files = (
 				A1C7AA5227E3CADB009380BC /* SecondsView.swift in Sources */,
 				A109F9BA27E539EE004DE4AA /* DataRectangleView.swift in Sources */,
+				A159B36227EBA53700369947 /* BackgroundView.swift in Sources */,
 				A15C208027EA5D47000528B3 /* ButtonView.swift in Sources */,
 				A16D4FAD27E26C15004BEDCE /* WordManager.swift in Sources */,
 				A1E9E03527E78F8B00CBDD6E /* Extensions.swift in Sources */,

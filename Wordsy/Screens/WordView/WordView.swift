@@ -12,43 +12,47 @@ struct WordView: View {
 	@StateObject var vm = WordViewModel()
 	
 	var body: some View {
-		VStack{
+		ZStack {
+			BackgroundView()
 			
-			Spacer()
-			
-			HStack(spacing: 15){
+			VStack{
 				
-				SecondsView(value: $vm.timerValue)
-					.onReceive(vm.timerManager.timer) { time in
-						vm.timerValueMinusOne()
-					}
-					.padding(.trailing, 40)
+				Spacer()
 				
-				DataRectangleView(value: $vm.wordsPerMinute, information: "Words/min")
-				DataRectangleView(value: $vm.charsPerMinute, information: "Chars/min")
-				DataRectangleView(value: $vm.precision, information: "% acccuracy")
-				
-			}
-			
-			Group{
-				HStack{
-					typedWordSection
-					currentWordSection
-					nextWordSection
+				HStack(spacing: 15){
+					
+					SecondsView(value: $vm.timerValue)
+						.onReceive(vm.timerManager.timer) { time in
+							vm.timerValueMinusOne()
+						}
+						.padding(.trailing, 40)
+					
+					DataRectangleView(value: $vm.wordsPerMinute, information: "Words/min")
+					DataRectangleView(value: $vm.charsPerMinute, information: "Chars/min")
+					DataRectangleView(value: $vm.precision, information: "% acccuracy")
+					
 				}
-				.font(.title2)
-				.frame(height: 80)
-				.frame(maxWidth: .infinity)
-				.background(Color.white)
-			}
-			.offset(y: 40)
-			
-			Spacer()
 				
-			SettingView()
+				Group{
+					HStack{
+						typedWordSection
+						currentWordSection
+						nextWordSection
+					}
+					.font(.title2)
+					.frame(height: 80)
+					.frame(maxWidth: .infinity)
+					.background(Color.white)
+				}
+				.offset(y: 40)
+				
+				Spacer()
+					
+				SettingView()
 
-			Spacer()
-			
+				Spacer()
+				
+			}
 		}
 		.frame(width: 1000, height: 700, alignment: .center)
 	}

@@ -13,8 +13,14 @@ struct SecondsView: View {
 
     var body: some View {
 		ZStack{
-			Circle()
-				.fill(Color.white)
+			ZStack {
+				Circle()
+					.fill(Color.bgYellow)
+				
+				Circle()
+					.fill(Color.white)
+					.frame(width: 100, height: 100)
+			}
 			
 			VStack{
 				Text("\(value)")
@@ -27,7 +33,7 @@ struct SecondsView: View {
 					.italic()
 			}
 		}
-		.frame(width: 100, height: 100)
+		.frame(width: 110, height: 110)
     }
 	
 	func getNumberColor() -> Color {
