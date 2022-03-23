@@ -22,8 +22,14 @@ struct WordView: View {
 				HStack(spacing: 15){
 					
 					SecondsView(value: $vm.timerValue)
-						.onReceive(vm.timerManager.timer) { time in
-							vm.timerValueMinusOne()
+						.onReceive(vm.timerManager.timer) { timeElapsed in
+							
+							if vm.timerValue == 0 {
+								vm.stopTimer()
+								vm.registerResults()
+							} else {
+								vm.timerValueMinusOne()
+							}
 						}
 						.padding(.trailing, 40)
 					

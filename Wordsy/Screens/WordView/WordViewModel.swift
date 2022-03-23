@@ -137,4 +137,9 @@ class WordViewModel: ObservableObject {
 		updateScore()
 	}
 	
+	func registerResults(){
+		let result = Result(timestamp: Date(), wordsPm: wordsPerMinute, charsPm: charsPerMinute, precision: precision)
+		print(result)
+	}
+	
 }
