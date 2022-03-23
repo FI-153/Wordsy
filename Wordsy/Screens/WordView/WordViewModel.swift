@@ -23,6 +23,7 @@ class WordViewModel: ObservableObject {
 	@Published var wordsPerMinute:Int
 	@Published var charsPerMinute:Int
 	@Published var precision:Int
+	@Published var result:Result?
 
 	init(){
 		self.nextWords = Array()
@@ -104,7 +105,7 @@ class WordViewModel: ObservableObject {
 	let timerManager = TimerManager.getShared()
 	
 	func startTimerIfNoneAreActive(){
-		if timerValue == 60 && !timerManager.timerIsRunning { timerManager.startTimer() }
+		if timerValue == standardTimerValeue && !timerManager.timerIsRunning { timerManager.startTimer() }
 	}
 	
 	func stopTimer() {
@@ -139,7 +140,7 @@ class WordViewModel: ObservableObject {
 	
 	func registerResults(){
 		let result = Result(timestamp: Date(), wordsPm: wordsPerMinute, charsPm: charsPerMinute, precision: precision)
-		print(result)
+		self.result = result
 	}
 	
 }

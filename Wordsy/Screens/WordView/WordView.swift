@@ -13,52 +13,67 @@ struct WordView: View {
 	
 	var body: some View {
 		ZStack {
-			BackgroundView()
 			
-			VStack{
+			Group {
+				BackgroundView()
 				
-				Spacer()
-				
-				HStack(spacing: 15){
+				VStack{
 					
-					SecondsView(value: $vm.timerValue)
-						.onReceive(vm.timerManager.timer) { timeElapsed in
-							
-							if vm.timerValue == 0 {
-								vm.stopTimer()
-								vm.registerResults()
-							} else {
-								vm.timerValueMinusOne()
+					Spacer()
+					
+					HStack(spacing: 15){
+						
+						SecondsView(value: $vm.timerValue)
+							.onReceive(vm.timerManager.timer) { timeElapsed in
+								
+								if vm.timerValue == 0 {
+									vm.stopTimer()
+									vm.registerResults()
+								} else {
+									vm.timerValueMinusOne()
+								}
 							}
-						}
-						.padding(.trailing, 40)
-					
-					DataRectangleView(value: $vm.wordsPerMinute, information: "Words/min")
-					DataRectangleView(value: $vm.charsPerMinute, information: "Chars/min")
-					DataRectangleView(value: $vm.precision, information: "% acccuracy")
-					
-				}
-				
-				Group{
-					HStack{
-						typedWordSection
-						currentWordSection
-						nextWordSection
+							.padding(.trailing, 40)
+						
+						DataRectangleView(value: $vm.wordsPerMinute, information: "Words/min")
+						DataRectangleView(value: $vm.charsPerMinute, information: "Chars/min")
+						DataRectangleView(value: $vm.precision, information: "% acccuracy")
+						
 					}
-					.font(.title2)
-					.frame(height: 80)
-					.frame(maxWidth: .infinity)
-					.background(Color.white)
-				}
-				.offset(y: 40)
-				
-				Spacer()
 					
-				SettingView()
-
-				Spacer()
-				
+					Group{
+						HStack{
+							typedWordSection
+							currentWordSection
+							nextWordSection
+						}
+						.font(.title2)
+						.frame(height: 80)
+						.frame(maxWidth: .infinity)
+						.background(Color.white)
+					}
+					.offset(y: 40)
+					
+					Spacer()
+					
+					SettingView()
+					
+					Spacer()
+					
+				}
 			}
+			.blur(radius: vm.result == nil ? 0 : 15)
+			
+			if let result = vm.result {
+				ZStack {
+					RoundedRectangle(cornerRadius: 15)
+						.fill(Material.thin)
+					
+					ResultsView(result: result)
+				}
+					
+			}
+			
 		}
 		.frame(width: 1000, height: 700, alignment: .center)
 	}
