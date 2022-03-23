@@ -113,4 +113,28 @@ class WordViewModelTest: XCTestCase {
 		vm.setAsCorrectlyTyped()
 		XCTAssertTrue(vm.currentWord.wasTypedCorrecly)
 	}
+	
+	func test_wordViewModel_registerResults_resultIsCorrectelyCreatedAndAdjusted(){
+		//Given
+		vm.precision = 100
+		vm.wordsPerMinute = 10
+		vm.charsPerMinute = 100
+		//When
+		vm.registerResults()
+		//Then
+		XCTAssertEqual(10, vm.result!.wordsPm)
+		XCTAssertEqual(100, vm.result!.charsPm)
+	}
+	
+	func test_wordViewModel_registerResults_resultIsCorrectelyCreatedAndAdjustedForLowerPrecision(){
+		//Given
+		vm.precision = 50
+		vm.wordsPerMinute = 10
+		vm.charsPerMinute = 100
+		//When
+		vm.registerResults()
+		//Then
+		XCTAssertEqual(5, vm.result!.wordsPm)
+		XCTAssertEqual(50, vm.result!.charsPm)
+	}
 }
