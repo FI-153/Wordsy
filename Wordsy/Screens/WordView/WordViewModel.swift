@@ -139,8 +139,12 @@ class WordViewModel: ObservableObject {
 	}
 	
 	func registerResults(){
-		let result = Result(timestamp: Date(), wordsPm: wordsPerMinute, charsPm: charsPerMinute, precision: precision)
-		self.result = result
+		let adjustemtFactor = Float(precision)/100
+		
+		self.result = Result(timestamp: Date(),
+							 wordsPm: wordsPerMinute.adjusted(by: adjustemtFactor),
+							 charsPm: charsPerMinute.adjusted(by: adjustemtFactor),
+							 precision: precision)
 	}
 	
 }

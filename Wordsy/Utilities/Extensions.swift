@@ -16,3 +16,8 @@ extension Color {
 	static let bgYellow = Color.init(red: 0.8833333253860474, green: 0.7950000762939453, blue: 0)
 }
 
+extension Int {
+	func adjusted(by adjustmentFactor:Float) -> Int {
+		return Int(Float(self)*adjustmentFactor)
+	}
+}
