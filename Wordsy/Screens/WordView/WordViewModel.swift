@@ -7,6 +7,11 @@
 
 import Combine
 import Foundation
+import SwiftUI
+
+enum WordsyDifficulty {
+	case easy, medium, hard
+}
 
 class WordViewModel: ObservableObject {
 	
@@ -25,6 +30,7 @@ class WordViewModel: ObservableObject {
 	@Published var precision:Int
 	@Published var result:Result?
 	@Published var isResultViewShown:Bool
+	@Published var difficulty:WordsyDifficulty
 
 	init(){
 		self.nextWords = Array()
@@ -36,6 +42,7 @@ class WordViewModel: ObservableObject {
 		self.charsPerMinute = 0
 		self.precision = 100
 		self.isResultViewShown = false
+		self.difficulty = .easy
 
 		subscribeToCurrentWord()
 		subscribeToTypedWords()

@@ -56,7 +56,7 @@ struct WordView: View {
 					
 					Spacer()
 					
-					SettingView()
+					SettingView(difficulty: $vm.difficulty)
 					
 					Spacer()
 					
