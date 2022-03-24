@@ -13,7 +13,7 @@ class WordViewModel: ObservableObject {
 	private let wordManager = WordManager()
 	private let scoreManager = ScoreManager.getShared()
 	private var cancellables = Set<AnyCancellable>()
-	private let standardTimerValeue = 3
+	private let standardTimerValue = 60
 	
 	@Published var nextWords:[Word]
 	@Published var typedWords:[Word]
@@ -31,7 +31,7 @@ class WordViewModel: ObservableObject {
 		self.typedWords = Array()
 		self.currentWord = Word(.empty)
 		self.typedWord = .empty
-		self.timerValue = standardTimerValeue
+		self.timerValue = standardTimerValue
 		self.wordsPerMinute = 0
 		self.charsPerMinute = 0
 		self.precision = 100
@@ -101,13 +101,15 @@ class WordViewModel: ObservableObject {
 	}
 	
 	func resetTimerValue(){
-		timerValue = 60
+		timerValue = standardTimerValue
 	}
 	
 	let timerManager = TimerManager.getShared()
 	
 	func startTimerIfNoneAreActive(){
-		if timerValue == standardTimerValeue && !timerManager.timerIsRunning { timerManager.startTimer() }
+		if timerValue == standardTimerValue && !timerManager.timerIsRunning {
+			timerManager.startTimer()
+		}
 	}
 	
 	func stopTimer() {
