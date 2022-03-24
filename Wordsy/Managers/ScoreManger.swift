@@ -37,4 +37,10 @@ class ScoreManager{
 		precision = round(Float(correctWords.count)/Float(typedWords.count) * 100)
 	}
 	
+	func reset(){
+		self.wordsPerMinute = 0
+		self.charsPerMinute = 0
+		self.precision = 100
+	}
+	
 }

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ResultsView: View {
 	var result:Result
+	@Binding var isResultViewShown:Bool
 	
     var body: some View {
 		VStack {
@@ -35,7 +36,7 @@ struct ResultsView: View {
 				}
 				
 				Button {
-					
+					isResultViewShown = false
 				} label: {
 					ButtonView(text: "Discard", color: .red, isSelected: true)
 				}
@@ -50,7 +51,7 @@ struct ResultsView: View {
 
 struct ResultsView_Previews: PreviewProvider {
     static var previews: some View {
-        ResultsView(result: Result(timestamp: Date(), wordsPm: 45, charsPm: 230, precision: 89))
+		ResultsView(result: Result(timestamp: Date(), wordsPm: 45, charsPm: 230, precision: 89), isResultViewShown: .constant(true))
 			.preferredColorScheme(.light)
     }
 }

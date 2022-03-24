@@ -13,7 +13,7 @@ class WordViewModel: ObservableObject {
 	private let wordManager = WordManager()
 	private let scoreManager = ScoreManager.getShared()
 	private var cancellables = Set<AnyCancellable>()
-	private let standardTimerValeue = 60
+	private let standardTimerValeue = 3
 	
 	@Published var nextWords:[Word]
 	@Published var typedWords:[Word]
@@ -24,6 +24,7 @@ class WordViewModel: ObservableObject {
 	@Published var charsPerMinute:Int
 	@Published var precision:Int
 	@Published var result:Result?
+	@Published var isResultViewShown:Bool
 
 	init(){
 		self.nextWords = Array()
@@ -34,6 +35,7 @@ class WordViewModel: ObservableObject {
 		self.wordsPerMinute = 0
 		self.charsPerMinute = 0
 		self.precision = 100
+		self.isResultViewShown = false
 
 		subscribeToCurrentWord()
 		subscribeToTypedWords()
@@ -145,6 +147,15 @@ class WordViewModel: ObservableObject {
 							 wordsPm: wordsPerMinute.adjusted(by: adjustemtFactor),
 							 charsPm: charsPerMinute.adjusted(by: adjustemtFactor),
 							 precision: precision)
+		
+		self.isResultViewShown = true
+	}
+	
+	func reset(){
+		result = nil
+		wordManager.reset()
+		scoreManager.reset()
+		wordManager.initialise()
 	}
 	
 }

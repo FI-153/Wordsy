@@ -64,14 +64,22 @@ struct WordView: View {
 			}
 			.blur(radius: vm.result == nil ? 0 : 15)
 			
-			if let result = vm.result {
-				ZStack {
-					RoundedRectangle(cornerRadius: 15)
-						.fill(Material.thin)
-					
-					ResultsView(result: result)
+			if vm.isResultViewShown {
+				if let result = vm.result {
+					ZStack {
+						RoundedRectangle(cornerRadius: 15)
+							.fill(Material.thin)
+						
+						ResultsView(result: result, isResultViewShown: $vm.isResultViewShown)
+					}
+					.onDisappear{
+						vm.reset()
+					}
+				} else {
+					Text("Unable to load results...")
+						.font(.largeTitle)
+						.foregroundColor(.red)
 				}
-					
 			}
 			
 		}
