@@ -29,6 +29,16 @@ class WordManagerTest: XCTestCase {
 		XCTAssertEqual(wordManager.currentWord, Word.startingWords.first!)
 	}
 	
+	func test_WordManager_initialise_allValuesInitialisedCorrectly() {
+		//Given
+		//When
+		wordManager.initialise()
+		//Then
+		assertEmpty(array: wordManager.typedWords)
+		XCTAssertEqual(wordManager.nextWords.count, Word.startingWords.count)
+		XCTAssertEqual(wordManager.currentWord, Word.startingWords.first!)
+	}
+	
 	func test_WordManager_showNextWord_theNextWordIsIssued(){
 		//Given
 		//When
@@ -58,6 +68,22 @@ class WordManagerTest: XCTestCase {
 		wordManager.emptyTypedWords()
 		//Then
 		assertEmpty(array: wordManager.typedWords)
+	}
+	
+	func test_WordManager_emptyNextWords_theArrayIsEmptied(){
+		//Given
+		//When
+		wordManager.emptyNextWords()
+		//Then
+		assertEmpty(array: wordManager.nextWords)
+	}
+	
+	func test_WordManager_emptyCurrentWord_theCurrentWordIsEmptied(){
+		//Given
+		//When
+		wordManager.emptyCurrentWord()
+		//Then
+		XCTAssertEqual(wordManager.currentWord, Word(.empty))
 	}
 	
 	func test_WordManager_removeFirstWordFromNext_theFirstWordIsRemovedFromNext(){

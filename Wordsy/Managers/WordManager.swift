@@ -14,6 +14,11 @@ class WordManager {
 	@Published var nextWords:[Word] = []
 	
 	init(){
+		initialise()
+	}
+	
+	func initialise(){
+		reset()
 		self.nextWords = Word.startingWords
 		assignANewWord()
 	}
@@ -32,6 +37,20 @@ class WordManager {
 	
 	func emptyTypedWords(){
 		typedWords.removeAll()
+	}
+	
+	func emptyNextWords(){
+		nextWords.removeAll()
+	}
+	
+	func emptyCurrentWord(){
+		currentWord = Word(.empty)
+	}
+	
+	func reset(){
+		emptyNextWords()
+		emptyTypedWords()
+		emptyCurrentWord()
 	}
 	
 	func removeFirstWordFromNextWords(){
