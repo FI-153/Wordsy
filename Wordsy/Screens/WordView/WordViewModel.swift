@@ -9,10 +9,6 @@ import Combine
 import Foundation
 import SwiftUI
 
-enum WordsyDifficulty {
-	case easy, medium, hard
-}
-
 class WordViewModel: ObservableObject {
 	
 	private let wordManager = WordManager()

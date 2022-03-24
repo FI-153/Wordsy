@@ -85,7 +85,6 @@ struct WordView: View {
 			}
 			
 		}
-		.frame(width: 1000, height: 700, alignment: .center)
 	}
 }
 

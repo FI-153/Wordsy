@@ -25,6 +25,7 @@
 		A16D4FB627E28044004BEDCE /* WordViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D4FB527E28044004BEDCE /* WordViewModelTest.swift */; };
 		A1ABE04D27E905000049EC6C /* ScoreManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1ABE04C27E905000049EC6C /* ScoreManger.swift */; };
 		A1ABE04F27E905BD0049EC6C /* ScoreManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1ABE04E27E905BD0049EC6C /* ScoreManagerTests.swift */; };
+		A1BD467627ED114B00AB7D59 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BD467527ED114B00AB7D59 /* Enums.swift */; };
 		A1C7AA5227E3CADB009380BC /* SecondsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C7AA5127E3CADB009380BC /* SecondsView.swift */; };
 		A1E9E03527E78F8B00CBDD6E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E9E03427E78F8B00CBDD6E /* Extensions.swift */; };
 		A1F1E31C27E7BE43005D6144 /* WordManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D4F9027E26BAE004BEDCE /* WordManagerTest.swift */; };
@@ -65,6 +66,7 @@
 		A16D4FB527E28044004BEDCE /* WordViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordViewModelTest.swift; sourceTree = "<group>"; };
 		A1ABE04C27E905000049EC6C /* ScoreManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreManger.swift; sourceTree = "<group>"; };
 		A1ABE04E27E905BD0049EC6C /* ScoreManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreManagerTests.swift; sourceTree = "<group>"; };
+		A1BD467527ED114B00AB7D59 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		A1C7AA5127E3CADB009380BC /* SecondsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondsView.swift; sourceTree = "<group>"; };
 		A1E9E03427E78F8B00CBDD6E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A1F1E31D27E7C657005D6144 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				A1E9E03427E78F8B00CBDD6E /* Extensions.swift */,
+				A1BD467527ED114B00AB7D59 /* Enums.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				A159B36227EBA53700369947 /* BackgroundView.swift in Sources */,
 				A15C208027EA5D47000528B3 /* ButtonView.swift in Sources */,
 				A159B36827EBAE0100369947 /* DataRectangleViewPadded.swift in Sources */,
+				A1BD467627ED114B00AB7D59 /* Enums.swift in Sources */,
 				A159B36427EBAA5500369947 /* Result.swift in Sources */,
 				A16D4FAD27E26C15004BEDCE /* WordManager.swift in Sources */,
 				A1E9E03527E78F8B00CBDD6E /* Extensions.swift in Sources */,
