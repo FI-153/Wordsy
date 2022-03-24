@@ -109,27 +109,34 @@ extension WordView {
 		ZStack {
 			Text(vm.currentWord.value.appending(" "))
 				.foregroundColor(.secondary)
-
-			TextField("", text: $vm.typedWord)
-				.textFieldStyle(.plain)
-				.onSubmit {
-					
-					vm.startTimerIfNoneAreActive()
-					
-					if vm.isTypedWordCorrect() {
-						vm.registerCorrectWord()
-					} else {
-						vm.registerWrongWord()
-					}
+			
+			Group {
+				if vm.difficulty == .hard {
+					SecureField("", text: $vm.typedWord)
+				} else {
+					TextField("", text: $vm.typedWord)
 				}
-				.onChange(of: vm.typedWord) { wordBeingTyped in
-					
-					vm.startTimerIfNoneAreActive()
-					
-					if wordBeingTyped == vm.currentWord.value.appending(" ") {
-						vm.registerCorrectWord()
-					}
+			}
+			.textFieldStyle(.plain)
+			.onSubmit {
+				
+				vm.startTimerIfNoneAreActive()
+				
+				if vm.isTypedWordCorrect() {
+					vm.registerCorrectWord()
+				} else {
+					vm.registerWrongWord()
 				}
+			}
+			.onChange(of: vm.typedWord) { wordBeingTyped in
+				
+				vm.startTimerIfNoneAreActive()
+				
+				if wordBeingTyped == vm.currentWord.value.appending(" ") {
+					vm.registerCorrectWord()
+				}
+			}
+			
 		}
 		.font(.largeTitle)
 		.frame(maxWidth: .infinity)
@@ -139,8 +146,14 @@ extension WordView {
 	private var nextWordSection: some View{
 		HStack{
 			ForEach(vm.nextWords, id: \.self) { word in
-				Text(word.value)
-					.foregroundColor(.black)
+				
+				if vm.difficulty == .medium || vm.difficulty == .hard {
+					Text(word.value.toAsterik())
+						.foregroundColor(.black)
+				} else {
+					Text(word.value)
+						.foregroundColor(.black)
+				}
 			}
 		}
 		.fixedSize(horizontal: true, vertical: false)

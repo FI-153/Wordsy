@@ -10,6 +10,10 @@ import SwiftUI
 
 extension String {
 	static let empty = String()
+	
+	func toAsterik() -> String {
+		return String(repeating: "*", count: self.count)
+	}
 }
 
 extension Color {

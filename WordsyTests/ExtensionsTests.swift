@@ -19,6 +19,16 @@ class ExtensionsTests: XCTestCase {
 		XCTAssertEqual(emptyString, emptyStringByExtension)
 	}
 	
+	func test_Extensions_String_toAsterisk_theWordIsTurnedInAsterisks(){
+		//Given
+		let stringToConvert = "hello"
+		let expectedString = "*****"
+		//When
+		let stringConverted = stringToConvert.toAsterik()
+		//Then
+		XCTAssertEqual(expectedString, stringConverted)
+	}
+	
 	func test_Extensions_Int_adjusted_theValueIsAdjustedByTheGivenFactor_stress(){
 		for number in 1...10 {
 			//Given
