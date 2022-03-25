@@ -31,6 +31,7 @@ struct HomeView: View {
 					
 					Text("Hello there!")
 						.font(.system(size: 30, weight: .medium))
+						.foregroundColor(.secondary)
 					
 					Group {
 						Button {

@@ -20,6 +20,7 @@ struct SettingView: View {
 					Text("Difficulty")
 						.font(.title)
 						.fontWeight(.semibold)
+						.foregroundColor(.secondary)
 					
 					Button {
 						difficulty = .easy

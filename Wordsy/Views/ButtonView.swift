@@ -23,6 +23,7 @@ struct ButtonView: View {
 			.frame(width: frameWidth, height: 50)
 			.background(color.opacity(0.5))
 			.clipShape(RoundedRectangle(cornerRadius: 15))
+			.shadow(radius: 1)
 			.opacity(isSelected ? 1 : 0.6)
     }
 }
