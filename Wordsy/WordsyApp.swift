@@ -11,7 +11,7 @@ import SwiftUI
 struct WordsyApp: App {
     var body: some Scene {
         WindowGroup {
-            WordView()
+            HomeView()
 				.frame(width: 1000, height: 700, alignment: .center)
 				.preferredColorScheme(.light)
         }

@@ -11,6 +11,7 @@ struct ButtonView: View {
 	var text:String
 	var color:Color
 	var isSelected:Bool
+	var frameWidth:CGFloat? = 150
 	
     var body: some View {
         Text(text)
@@ -19,7 +20,7 @@ struct ButtonView: View {
 			.fontWeight(.medium)
 			.shadow(radius: 15)
 			.padding()
-			.frame(width: 150, height: 50)
+			.frame(width: frameWidth, height: 50)
 			.background(color.opacity(0.5))
 			.clipShape(RoundedRectangle(cornerRadius: 15))
 			.opacity(isSelected ? 1 : 0.6)
