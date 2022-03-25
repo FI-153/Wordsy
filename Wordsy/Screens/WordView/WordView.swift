@@ -150,7 +150,7 @@ extension WordView {
 			ForEach(vm.nextWords, id: \.self) { word in
 				
 				if vm.difficulty == .medium || vm.difficulty == .hard {
-					Text(word.value.toAsterik())
+					Text(word.value.toDots())
 						.foregroundColor(.black)
 				} else {
 					Text(word.value)

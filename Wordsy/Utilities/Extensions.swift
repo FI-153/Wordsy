@@ -11,8 +11,8 @@ import SwiftUI
 extension String {
 	static let empty = String()
 	
-	func toAsterik() -> String {
-		return String(repeating: "*", count: self.count)
+	func toDots() -> String {
+		return String(repeating: "•", count: self.count)
 	}
 }
 

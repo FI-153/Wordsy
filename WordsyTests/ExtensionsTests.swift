@@ -24,7 +24,7 @@ class ExtensionsTests: XCTestCase {
 		let stringToConvert = "hello"
 		let expectedString = "*****"
 		//When
-		let stringConverted = stringToConvert.toAsterik()
+		let stringConverted = stringToConvert.toDots()
 		//Then
 		XCTAssertEqual(expectedString, stringConverted)
 	}
