@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Result: Identifiable {
+struct TestResult: Identifiable {
 	
 	let id = UUID()
 	let timestamp:Date

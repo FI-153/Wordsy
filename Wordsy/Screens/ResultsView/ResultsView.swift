@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct ResultsView: View {
-	var result:Result
+	var result:TestResult
 	@Binding var isResultViewShown:Bool
+	
+	var persistanceManager = PersistanceManager.getShared()
 	
     var body: some View {
 		VStack {
@@ -30,7 +32,8 @@ struct ResultsView: View {
 			
 			HStack(spacing: 15){
 				Button {
-					
+					persistanceManager.add(result)
+					isResultViewShown = false
 				} label: {
 					ButtonView(text: "Save", color: .green, isSelected: true)
 				}
@@ -51,7 +54,7 @@ struct ResultsView: View {
 
 struct ResultsView_Previews: PreviewProvider {
     static var previews: some View {
-		ResultsView(result: Result(timestamp: Date(), wordsPm: 45, charsPm: 230, precision: 89), isResultViewShown: .constant(true))
+		ResultsView(result: TestResult(timestamp: Date(), wordsPm: 45, charsPm: 230, precision: 89), isResultViewShown: .constant(true))
 			.preferredColorScheme(.light)
     }
 }

@@ -24,7 +24,7 @@ class WordViewModel: ObservableObject {
 	@Published var wordsPerMinute:Int
 	@Published var charsPerMinute:Int
 	@Published var precision:Int
-	@Published var result:Result?
+	@Published var result:TestResult?
 	@Published var isResultViewShown:Bool
 	@Published var difficulty:WordsyDifficulty
 
@@ -148,7 +148,7 @@ class WordViewModel: ObservableObject {
 	func registerResults(){
 		let adjustemtFactor = Float(precision)/100
 		
-		self.result = Result(timestamp: Date(),
+		self.result = TestResult(timestamp: Date(),
 							 wordsPm: wordsPerMinute.adjusted(by: adjustemtFactor),
 							 charsPm: charsPerMinute.adjusted(by: adjustemtFactor),
 							 precision: precision)

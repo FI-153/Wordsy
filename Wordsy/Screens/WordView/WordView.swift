@@ -59,6 +59,7 @@ struct WordView: View {
 					SettingView(difficulty: $vm.difficulty)
 						.disabled(vm.timerManager.timerIsRunning)
 						.opacity(vm.timerManager.timerIsRunning ? 0.8 : 1)
+						.animation(.easeOut, value: vm.timerManager.timerIsRunning)
 					
 					Spacer()
 					
