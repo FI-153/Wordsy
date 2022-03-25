@@ -14,7 +14,7 @@ class WordViewModel: ObservableObject {
 	private let wordManager = WordManager()
 	private let scoreManager = ScoreManager.getShared()
 	private var cancellables = Set<AnyCancellable>()
-	private let standardTimerValue = 60
+	private let standardTimerValue = 5
 	
 	@Published var nextWords:[Word]
 	@Published var typedWords:[Word]

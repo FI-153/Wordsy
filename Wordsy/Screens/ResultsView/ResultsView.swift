@@ -8,49 +8,64 @@
 import SwiftUI
 
 struct ResultsView: View {
-	var result:TestResult
-	@Binding var isResultViewShown:Bool
 	
-	var persistanceManager = PersistanceManager.getShared()
+	@StateObject var vm:ResultsViewModel
+	init(result:TestResult, isResultViewShown:Binding<Bool>){
+		self._vm = .init(wrappedValue: ResultsViewModel(isResultViewShown: isResultViewShown, result: result))
+	}
 	
     var body: some View {
 		VStack {
 			Spacer()
 			
-			Text("Great job!")
-				.font(.system(size: 30, weight: .medium))
+			titleSection
 			
 			Spacer()
 			
-			HStack(spacing: 15){
-				DataRectangleViewPadded(value: result.wordsPm, information: "Words/min")
-				DataRectangleViewPadded(value: result.charsPm, information: "Chars/min")
-				DataRectangleViewPadded(value: result.precision, information: "% acccuracy")
-			}
+			resultsSection
 			
 			Spacer()
 			
-			HStack(spacing: 15){
-				Button {
-					persistanceManager.add(result)
-					isResultViewShown = false
-				} label: {
-					ButtonView(text: "Save", color: .green, isSelected: true)
-				}
-				
-				Button {
-					isResultViewShown = false
-				} label: {
-					ButtonView(text: "Discard", color: .red, isSelected: true)
-				}
-			}
-			.buttonStyle(.plain)
+			buttonsSection
 			
 			Spacer()
 		}
 		.frame(width: 600, height: 400)
     }
 }
+
+extension ResultsView {
+	private var titleSection: some View {
+		Text("Great job!")
+			.font(.system(size: 30, weight: .medium))
+	}
+	
+	private var resultsSection: some View{
+		HStack(spacing: 15){
+			DataRectangleViewPadded(value: vm.result.wordsPm, information: "Words/min")
+			DataRectangleViewPadded(value: vm.result.charsPm, information: "Chars/min")
+			DataRectangleViewPadded(value: vm.result.precision, information: "% acccuracy")
+		}
+	}
+	
+	private var buttonsSection: some View{
+		HStack(spacing: 15){
+			Button {
+				vm.saveResults()
+			} label: {
+				ButtonView(text: "Save", color: .green, isSelected: true)
+			}
+			
+			Button {
+				vm.isResultViewShown = false
+			} label: {
+				ButtonView(text: "Discard", color: .red, isSelected: true)
+			}
+		}
+		.buttonStyle(.plain)
+	}
+}
+
 
 struct ResultsView_Previews: PreviewProvider {
     static var previews: some View {
