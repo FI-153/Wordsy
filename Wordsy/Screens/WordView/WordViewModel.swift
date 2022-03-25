@@ -27,8 +27,10 @@ class WordViewModel: ObservableObject {
 	@Published var result:TestResult?
 	@Published var isResultViewShown:Bool
 	@Published var difficulty:WordsyDifficulty
+	
+	@Binding var isOneMinuteTestDisplayed:Bool
 
-	init(){
+	init(isOneMinuteTestDisplayed:Binding<Bool>){
 		self.nextWords = Array()
 		self.typedWords = Array()
 		self.currentWord = Word(.empty)
@@ -39,6 +41,7 @@ class WordViewModel: ObservableObject {
 		self.precision = 100
 		self.isResultViewShown = false
 		self.difficulty = .easy
+		self._isOneMinuteTestDisplayed = isOneMinuteTestDisplayed
 
 		subscribeToCurrentWord()
 		subscribeToTypedWords()

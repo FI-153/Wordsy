@@ -16,7 +16,7 @@ struct HomeView: View {
 			BackgroundView()
 			
 			if isOneMinuteTestDisplayed {
-				WordView()
+				WordView(isOneMinuteTestDisplayed: $isOneMinuteTestDisplayed)
 			} else if areStatisticsShown {
 				
 			} else {

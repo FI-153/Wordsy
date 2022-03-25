@@ -9,13 +9,32 @@ import SwiftUI
 
 struct WordView: View {
 	
-	@StateObject var vm = WordViewModel()
+	@StateObject var vm:WordViewModel
+	
+	init(isOneMinuteTestDisplayed:Binding<Bool>){
+		self._vm = .init(wrappedValue: WordViewModel(isOneMinuteTestDisplayed: isOneMinuteTestDisplayed))
+	}
 	
 	var body: some View {
 		ZStack {
 			
 			Group {
 				BackgroundView()
+				
+				VStack {
+					HStack{
+						Button {
+							vm.isOneMinuteTestDisplayed = false
+						} label: {
+							ButtonView(text: "Home", color: .bgYellow, isSelected: true)
+						}
+						.buttonStyle(.plain)
+
+						Spacer()
+					}
+					Spacer()
+				}
+				.padding()
 				
 				VStack{
 					
@@ -167,7 +186,7 @@ extension WordView {
 
 struct ContentView_Previews: PreviewProvider {
 	static var previews: some View {
-		WordView()
+		WordView(isOneMinuteTestDisplayed: .constant(false))
 			.preferredColorScheme(.light)
 	}
 }
