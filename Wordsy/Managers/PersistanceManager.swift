@@ -12,6 +12,7 @@ class PersistanceManager{
 	
 	static let shared = PersistanceManager()
 	let db:NSPersistentContainer
+	let context:NSManagedObjectContext
 
 	private init(){
 		db = NSPersistentContainer(name: "Results")
@@ -20,6 +21,7 @@ class PersistanceManager{
 				fatalError("Impossible to load persistant store")
 			}
 		}
+		context = db.viewContext
 	}
 	
 	static func getShared() -> PersistanceManager{
@@ -27,8 +29,6 @@ class PersistanceManager{
 	}
 	
 	func save(completion: @escaping(Error?) -> () = {_ in}) {
-		let context = db.viewContext
-		
 		if context.hasChanges {
 			do{
 				try context.save()
@@ -40,13 +40,13 @@ class PersistanceManager{
 	}
 	
 	func delete(_ object:NSManagedObject, completion: @escaping(Error?) -> () = {_ in}){
-		let context = db.viewContext
 		context.delete(object)
 		self.save(completion: completion)
 	}
 	
 	func add(_ resultToBeSaved:TestResult){
-		let item = SavedResult(context: db.viewContext)
+		
+		let item = SavedResult(context: context)
 		item.id = resultToBeSaved.id
 		item.timestamp = resultToBeSaved.timestamp
 		item.wordsPm = Int16(resultToBeSaved.wordsPm)
@@ -54,8 +54,6 @@ class PersistanceManager{
 		item.precision = Int16(resultToBeSaved.precision)
 		
 		self.save()
-		
-		print("Result saved")
 	}
 	
 	
