@@ -15,7 +15,7 @@ class WordViewModelTest: XCTestCase {
 
 	override func setUpWithError() throws {
 		self.wordManager = WordManager()
-		self.vm = WordViewModel()
+		self.vm = WordViewModel(isOneMinuteTestDisplayed: .constant(false))
 	}
 
 	override func tearDownWithError() throws {

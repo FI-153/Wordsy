@@ -22,7 +22,7 @@ class ExtensionsTests: XCTestCase {
 	func test_Extensions_String_toAsterisk_theWordIsTurnedInAsterisks(){
 		//Given
 		let stringToConvert = "hello"
-		let expectedString = "*****"
+		let expectedString = "•••••"
 		//When
 		let stringConverted = stringToConvert.toDots()
 		//Then
