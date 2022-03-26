@@ -21,13 +21,10 @@ struct HomeView: View {
 				
 			} else {
 				VStack{
-					ZStack{
-						Circle()
-							.fill(Color.bgYellow)
-						
-						Image("")
-					}
-					.frame(width: 150, height: 150)
+					
+					Image("icon")
+						.resizable()
+						.frame(width: 150, height: 150)
 					
 					Text("Hello there!")
 						.font(.system(size: 30, weight: .medium))
