@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ResultsSettingView: View {
 	@Binding var isSettingsViewDisplayed:Bool
+	@Binding var areStatisticsDisplayed:Bool
 	
 	var body: some View {
 		VStack {
@@ -49,6 +50,7 @@ extension ResultsSettingView {
 	private var clearResultsButtonSection: some View{
 		Button {
 			PersistanceManager.getShared().deleteAll()
+			areStatisticsDisplayed = false
 		} label: {
 			ButtonView(text: "Clear results", color: .red, isSelected: true, frameWidth: 200)
 		}
@@ -59,7 +61,7 @@ extension ResultsSettingView {
 
 struct HomeSettingView_Previews: PreviewProvider {
 	static var previews: some View {
-		ResultsSettingView(isSettingsViewDisplayed: .constant(true))
+		ResultsSettingView(isSettingsViewDisplayed: .constant(true), areStatisticsDisplayed: .constant(true))
 			.preferredColorScheme(.light)
 	}
 }

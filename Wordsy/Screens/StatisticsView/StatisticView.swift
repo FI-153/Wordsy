@@ -33,7 +33,7 @@ struct StatisticView: View {
 			}
 		}
 		.sheet(isPresented: $isSettingsViewDisplayed) {
-			ResultsSettingView(isSettingsViewDisplayed: $isSettingsViewDisplayed)
+			ResultsSettingView(isSettingsViewDisplayed: $isSettingsViewDisplayed, areStatisticsDisplayed: $areStatisticsDisplayed)
 		}
 	}
 }
