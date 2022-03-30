@@ -42,5 +42,23 @@ class ExtensionsTests: XCTestCase {
 			XCTAssertEqual(expectedValue, adjustedValue)
 		}
 	}
+	
+	func test_Extensions_Int16_isZero_theGivenNumberIsZero() {
+		//Given
+		let zero:Int16 = 0
+		//When
+		let isZero = zero.isZero()
+		//Then
+		XCTAssertTrue(isZero)
+	}
+	
+	func test_Extensions_Int16_isZero_theGivenNumberIsNotZero() {
+		//Given
+		let zero:Int16 = 1
+		//When
+		let isZero = zero.isZero()
+		//Then
+		XCTAssertFalse(isZero)
+	}
 
 }

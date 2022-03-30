@@ -25,3 +25,9 @@ extension Int {
 		return Int(Float(self)*adjustmentFactor)
 	}
 }
+
+extension Int16 {
+	func isZero() -> Bool {
+		return self == 0
+	}
+}
