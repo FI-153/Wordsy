@@ -18,7 +18,7 @@ struct HomeView: View {
 			if isOneMinuteTestDisplayed {
 				WordView(isOneMinuteTestDisplayed: $isOneMinuteTestDisplayed)
 			} else if areStatisticsShown {
-				
+				StatisticView()
 			} else {
 				VStack{
 					
@@ -38,7 +38,7 @@ struct HomeView: View {
 						}
 						
 						Button {
-							
+							areStatisticsShown = true
 						} label: {
 							ButtonView(text: "Statistics", color: .bgYellow, isSelected: true, frameWidth: 250)
 						}
