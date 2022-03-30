@@ -9,7 +9,7 @@ import Combine
 import Foundation
 import SwiftUI
 
-class WordViewModel: ObservableObject {
+class OneMinuteTestViewModel: ObservableObject {
 	
 	private let wordManager = WordManager()
 	private let scoreManager = ScoreManager.getShared()

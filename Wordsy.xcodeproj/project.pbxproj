@@ -23,13 +23,13 @@
 		A15C207E27EA5ADC000528B3 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15C207D27EA5ADC000528B3 /* SettingView.swift */; };
 		A15C208027EA5D47000528B3 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15C207F27EA5D47000528B3 /* ButtonView.swift */; };
 		A16D4F7F27E26BAC004BEDCE /* WordsyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D4F7E27E26BAC004BEDCE /* WordsyApp.swift */; };
-		A16D4F8127E26BAC004BEDCE /* WordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D4F8027E26BAC004BEDCE /* WordView.swift */; };
+		A16D4F8127E26BAC004BEDCE /* OneMinuteTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D4F8027E26BAC004BEDCE /* OneMinuteTestView.swift */; };
 		A16D4F8327E26BAE004BEDCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A16D4F8227E26BAE004BEDCE /* Assets.xcassets */; };
 		A16D4F8627E26BAE004BEDCE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A16D4F8527E26BAE004BEDCE /* Preview Assets.xcassets */; };
 		A16D4FAD27E26C15004BEDCE /* WordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D4FAC27E26C15004BEDCE /* WordManager.swift */; };
 		A16D4FB027E26C26004BEDCE /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D4FAF27E26C26004BEDCE /* Word.swift */; };
-		A16D4FB327E27D58004BEDCE /* WordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D4FB227E27D58004BEDCE /* WordViewModel.swift */; };
-		A16D4FB627E28044004BEDCE /* WordViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D4FB527E28044004BEDCE /* WordViewModelTest.swift */; };
+		A16D4FB327E27D58004BEDCE /* OneMinuteTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D4FB227E27D58004BEDCE /* OneMinuteTestViewModel.swift */; };
+		A16D4FB627E28044004BEDCE /* OneMinuteWordViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D4FB527E28044004BEDCE /* OneMinuteWordViewModelTests.swift */; };
 		A1ABE04D27E905000049EC6C /* ScoreManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1ABE04C27E905000049EC6C /* ScoreManger.swift */; };
 		A1ABE04F27E905BD0049EC6C /* ScoreManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1ABE04E27E905BD0049EC6C /* ScoreManagerTests.swift */; };
 		A1BD467627ED114B00AB7D59 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BD467527ED114B00AB7D59 /* Enums.swift */; };
@@ -68,7 +68,7 @@
 		A15C207F27EA5D47000528B3 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		A16D4F7B27E26BAC004BEDCE /* Wordsy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wordsy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A16D4F7E27E26BAC004BEDCE /* WordsyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsyApp.swift; sourceTree = "<group>"; };
-		A16D4F8027E26BAC004BEDCE /* WordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordView.swift; sourceTree = "<group>"; };
+		A16D4F8027E26BAC004BEDCE /* OneMinuteTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneMinuteTestView.swift; sourceTree = "<group>"; };
 		A16D4F8227E26BAE004BEDCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A16D4F8527E26BAE004BEDCE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A16D4F8727E26BAE004BEDCE /* Wordsy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Wordsy.entitlements; sourceTree = "<group>"; };
@@ -76,8 +76,8 @@
 		A16D4F9027E26BAE004BEDCE /* WordManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordManagerTest.swift; sourceTree = "<group>"; };
 		A16D4FAC27E26C15004BEDCE /* WordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordManager.swift; sourceTree = "<group>"; };
 		A16D4FAF27E26C26004BEDCE /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
-		A16D4FB227E27D58004BEDCE /* WordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordViewModel.swift; sourceTree = "<group>"; };
-		A16D4FB527E28044004BEDCE /* WordViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordViewModelTest.swift; sourceTree = "<group>"; };
+		A16D4FB227E27D58004BEDCE /* OneMinuteTestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneMinuteTestViewModel.swift; sourceTree = "<group>"; };
+		A16D4FB527E28044004BEDCE /* OneMinuteWordViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneMinuteWordViewModelTests.swift; sourceTree = "<group>"; };
 		A1ABE04C27E905000049EC6C /* ScoreManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreManger.swift; sourceTree = "<group>"; };
 		A1ABE04E27E905BD0049EC6C /* ScoreManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreManagerTests.swift; sourceTree = "<group>"; };
 		A1BD467527ED114B00AB7D59 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
@@ -152,7 +152,6 @@
 			isa = PBXGroup;
 			children = (
 				A16D4F7D27E26BAC004BEDCE /* Wordsy */,
-				A1071A7127EE554C00DD124D /* Results.xcdatamodeld */,
 				A16D4F8F27E26BAE004BEDCE /* WordsyTests */,
 				A16D4F7C27E26BAC004BEDCE /* Products */,
 			);
@@ -195,7 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				A16D4F9027E26BAE004BEDCE /* WordManagerTest.swift */,
-				A16D4FB527E28044004BEDCE /* WordViewModelTest.swift */,
+				A16D4FB527E28044004BEDCE /* OneMinuteWordViewModelTests.swift */,
 				A1F1E31F27E7C7F6005D6144 /* TimerManagerTests.swift */,
 				A1ABE04E27E905BD0049EC6C /* ScoreManagerTests.swift */,
 				A159B36B27EBD62900369947 /* ExtensionsTests.swift */,
@@ -231,6 +230,7 @@
 			children = (
 				A16D4FAF27E26C26004BEDCE /* Word.swift */,
 				A159B36327EBAA5500369947 /* TestResult.swift */,
+				A1071A7127EE554C00DD124D /* Results.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -251,8 +251,8 @@
 		A1C7AA5027E3CABD009380BC /* WordView */ = {
 			isa = PBXGroup;
 			children = (
-				A16D4F8027E26BAC004BEDCE /* WordView.swift */,
-				A16D4FB227E27D58004BEDCE /* WordViewModel.swift */,
+				A16D4F8027E26BAC004BEDCE /* OneMinuteTestView.swift */,
+				A16D4FB227E27D58004BEDCE /* OneMinuteTestViewModel.swift */,
 			);
 			path = WordView;
 			sourceTree = "<group>";
@@ -370,13 +370,13 @@
 				A1E9E03527E78F8B00CBDD6E /* Extensions.swift in Sources */,
 				A1ABE04D27E905000049EC6C /* ScoreManger.swift in Sources */,
 				A1071A7827EE5EEC00DD124D /* ResultsViewModel.swift in Sources */,
-				A16D4FB327E27D58004BEDCE /* WordViewModel.swift in Sources */,
+				A16D4FB327E27D58004BEDCE /* OneMinuteTestViewModel.swift in Sources */,
 				A16D4FB027E26C26004BEDCE /* Word.swift in Sources */,
 				A126D99627F471B4008DD0A5 /* StatisticViewModel.swift in Sources */,
 				A1F1E31E27E7C657005D6144 /* TimerManager.swift in Sources */,
 				A1071A7D27EE626400DD124D /* HomeView.swift in Sources */,
 				A1071A7627EE55F800DD124D /* PersistanceManager.swift in Sources */,
-				A16D4F8127E26BAC004BEDCE /* WordView.swift in Sources */,
+				A16D4F8127E26BAC004BEDCE /* OneMinuteTestView.swift in Sources */,
 				A16D4F7F27E26BAC004BEDCE /* WordsyApp.swift in Sources */,
 				A101AE4F27F492DD00970938 /* GoBackButtonView.swift in Sources */,
 				A159B36627EBAC3400369947 /* ResultsView.swift in Sources */,
@@ -391,7 +391,7 @@
 				A159B36C27EBD62900369947 /* ExtensionsTests.swift in Sources */,
 				A1ABE04F27E905BD0049EC6C /* ScoreManagerTests.swift in Sources */,
 				A1F1E32027E7C7F6005D6144 /* TimerManagerTests.swift in Sources */,
-				A16D4FB627E28044004BEDCE /* WordViewModelTest.swift in Sources */,
+				A16D4FB627E28044004BEDCE /* OneMinuteWordViewModelTests.swift in Sources */,
 				A1F1E31C27E7BE43005D6144 /* WordManagerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

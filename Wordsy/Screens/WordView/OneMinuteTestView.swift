@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct WordView: View {
+struct OneMinuteTestView: View {
 	
-	@StateObject var vm:WordViewModel
+	@StateObject var vm:OneMinuteTestViewModel
 	
 	init(isOneMinuteTestDisplayed:Binding<Bool>){
-		self._vm = .init(wrappedValue: WordViewModel(isOneMinuteTestDisplayed: isOneMinuteTestDisplayed))
+		self._vm = .init(wrappedValue: OneMinuteTestViewModel(isOneMinuteTestDisplayed: isOneMinuteTestDisplayed))
 	}
 	
 	var body: some View {
@@ -93,7 +93,7 @@ struct WordView: View {
 	}
 }
 
-extension WordView {
+extension OneMinuteTestView {
 	private var typedWordSection: some View {
 		HStack{
 			ForEach(vm.typedWords) { word in
@@ -182,7 +182,7 @@ extension WordView {
 
 struct ContentView_Previews: PreviewProvider {
 	static var previews: some View {
-		WordView(isOneMinuteTestDisplayed: .constant(false))
+		OneMinuteTestView(isOneMinuteTestDisplayed: .constant(false))
 			.preferredColorScheme(.light)
 	}
 }

@@ -15,4 +15,9 @@ struct TestResult: Identifiable {
 	let charsPm:Int
 	let precision:Int
 	
+	///Adds the result to the given Database
+	func addTo(_ persistanceManger: PersistanceManager) {
+		persistanceManger.add(self)
+	}
+	
 }
