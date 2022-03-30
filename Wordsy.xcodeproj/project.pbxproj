@@ -33,6 +33,8 @@
 		A1ABE04D27E905000049EC6C /* ScoreManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1ABE04C27E905000049EC6C /* ScoreManger.swift */; };
 		A1ABE04F27E905BD0049EC6C /* ScoreManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1ABE04E27E905BD0049EC6C /* ScoreManagerTests.swift */; };
 		A1BD467627ED114B00AB7D59 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BD467527ED114B00AB7D59 /* Enums.swift */; };
+		A1C623A027F4B3FC005D18AE /* ResultsSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C6239F27F4B3FC005D18AE /* ResultsSettingView.swift */; };
+		A1C623A227F4B7BF005D18AE /* DismissButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C623A127F4B7BF005D18AE /* DismissButtonView.swift */; };
 		A1C7AA5227E3CADB009380BC /* SecondsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C7AA5127E3CADB009380BC /* SecondsView.swift */; };
 		A1E9E03527E78F8B00CBDD6E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E9E03427E78F8B00CBDD6E /* Extensions.swift */; };
 		A1F1E31C27E7BE43005D6144 /* WordManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D4F9027E26BAE004BEDCE /* WordManagerTest.swift */; };
@@ -81,6 +83,8 @@
 		A1ABE04C27E905000049EC6C /* ScoreManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreManger.swift; sourceTree = "<group>"; };
 		A1ABE04E27E905BD0049EC6C /* ScoreManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreManagerTests.swift; sourceTree = "<group>"; };
 		A1BD467527ED114B00AB7D59 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		A1C6239F27F4B3FC005D18AE /* ResultsSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsSettingView.swift; sourceTree = "<group>"; };
+		A1C623A127F4B7BF005D18AE /* DismissButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissButtonView.swift; sourceTree = "<group>"; };
 		A1C7AA5127E3CADB009380BC /* SecondsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondsView.swift; sourceTree = "<group>"; };
 		A1E9E03427E78F8B00CBDD6E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A1F1E31D27E7C657005D6144 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
@@ -207,7 +211,6 @@
 			children = (
 				A1071A7B27EE625600DD124D /* HomeView */,
 				A1C7AA5027E3CABD009380BC /* OneMinuteTestView */,
-				A15C207C27EA5AC0000528B3 /* SettingView */,
 				A159B36927EBD35C00369947 /* ResultsView */,
 				A126D99227F47165008DD0A5 /* StatisticsView */,
 			);
@@ -235,15 +238,26 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		A1C6239E27F4B3EA005D18AE /* ResultsSettingView */ = {
+			isa = PBXGroup;
+			children = (
+				A1C6239F27F4B3FC005D18AE /* ResultsSettingView.swift */,
+			);
+			path = ResultsSettingView;
+			sourceTree = "<group>";
+		};
 		A1C7AA4F27E3CA74009380BC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A1C6239E27F4B3EA005D18AE /* ResultsSettingView */,
+				A15C207C27EA5AC0000528B3 /* SettingView */,
 				A1C7AA5127E3CADB009380BC /* SecondsView.swift */,
 				A109F9B927E539EE004DE4AA /* DataRectangleView.swift */,
 				A15C207F27EA5D47000528B3 /* ButtonView.swift */,
 				A159B36127EBA53700369947 /* BackgroundView.swift */,
 				A159B36727EBAE0100369947 /* DataRectangleViewPadded.swift */,
 				A101AE4E27F492DD00970938 /* GoBackButtonView.swift */,
+				A1C623A127F4B7BF005D18AE /* DismissButtonView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -360,6 +374,7 @@
 				A1C7AA5227E3CADB009380BC /* SecondsView.swift in Sources */,
 				A109F9BA27E539EE004DE4AA /* DataRectangleView.swift in Sources */,
 				A126D99427F47195008DD0A5 /* StatisticView.swift in Sources */,
+				A1C623A027F4B3FC005D18AE /* ResultsSettingView.swift in Sources */,
 				A159B36227EBA53700369947 /* BackgroundView.swift in Sources */,
 				A15C208027EA5D47000528B3 /* ButtonView.swift in Sources */,
 				A159B36827EBAE0100369947 /* DataRectangleViewPadded.swift in Sources */,
@@ -373,6 +388,7 @@
 				A16D4FB327E27D58004BEDCE /* OneMinuteTestViewModel.swift in Sources */,
 				A16D4FB027E26C26004BEDCE /* Word.swift in Sources */,
 				A126D99627F471B4008DD0A5 /* StatisticViewModel.swift in Sources */,
+				A1C623A227F4B7BF005D18AE /* DismissButtonView.swift in Sources */,
 				A1F1E31E27E7C657005D6144 /* TimerManager.swift in Sources */,
 				A1071A7D27EE626400DD124D /* HomeView.swift in Sources */,
 				A1071A7627EE55F800DD124D /* PersistanceManager.swift in Sources */,

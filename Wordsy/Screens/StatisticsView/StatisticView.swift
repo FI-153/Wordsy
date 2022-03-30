@@ -12,6 +12,7 @@ import CoreData
 struct StatisticView: View {
 	@StateObject var vm = StatisticViewModel()
 	@Binding var areStatisticsDisplayed:Bool
+	@State var isSettingsViewDisplayed:Bool = false
 	
 	var body: some View {
 		
@@ -31,6 +32,9 @@ struct StatisticView: View {
 				
 			}
 		}
+		.sheet(isPresented: $isSettingsViewDisplayed) {
+			ResultsSettingView(isSettingsViewDisplayed: $isSettingsViewDisplayed)
+		}
 	}
 }
 
@@ -39,7 +43,19 @@ extension StatisticView {
 		VStack {
 			HStack{
 				GoBackButtonView(usingVariable: $areStatisticsDisplayed)
+				
 				Spacer()
+				
+				Button {
+					isSettingsViewDisplayed = true
+				} label: {
+					Image(systemName: "gearshape.fill")
+						.resizable()
+						.foregroundColor(.bgYellow)
+						.frame(width: 50, height: 50)
+				}
+				.buttonStyle(.plain)
+
 			}
 			Spacer()
 		}
@@ -50,5 +66,7 @@ extension StatisticView {
 struct StatisticView_Previews: PreviewProvider {
 	static var previews: some View {
 		StatisticView(areStatisticsDisplayed: .constant(true))
+			.preferredColorScheme(.light)
+			.frame(width: 1000, height: 700)
 	}
 }
