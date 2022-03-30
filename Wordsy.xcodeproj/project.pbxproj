@@ -246,18 +246,34 @@
 			path = ResultsSettingView;
 			sourceTree = "<group>";
 		};
+		A1C623A327F4B9CD005D18AE /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				A15C207F27EA5D47000528B3 /* ButtonView.swift */,
+				A101AE4E27F492DD00970938 /* GoBackButtonView.swift */,
+				A1C623A127F4B7BF005D18AE /* DismissButtonView.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		A1C623A427F4B9E0005D18AE /* Data Displayers */ = {
+			isa = PBXGroup;
+			children = (
+				A1C7AA5127E3CADB009380BC /* SecondsView.swift */,
+				A109F9B927E539EE004DE4AA /* DataRectangleView.swift */,
+				A159B36727EBAE0100369947 /* DataRectangleViewPadded.swift */,
+			);
+			path = "Data Displayers";
+			sourceTree = "<group>";
+		};
 		A1C7AA4F27E3CA74009380BC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A1C623A427F4B9E0005D18AE /* Data Displayers */,
+				A1C623A327F4B9CD005D18AE /* Buttons */,
 				A1C6239E27F4B3EA005D18AE /* ResultsSettingView */,
 				A15C207C27EA5AC0000528B3 /* SettingView */,
-				A1C7AA5127E3CADB009380BC /* SecondsView.swift */,
-				A109F9B927E539EE004DE4AA /* DataRectangleView.swift */,
-				A15C207F27EA5D47000528B3 /* ButtonView.swift */,
 				A159B36127EBA53700369947 /* BackgroundView.swift */,
-				A159B36727EBAE0100369947 /* DataRectangleViewPadded.swift */,
-				A101AE4E27F492DD00970938 /* GoBackButtonView.swift */,
-				A1C623A127F4B7BF005D18AE /* DismissButtonView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
