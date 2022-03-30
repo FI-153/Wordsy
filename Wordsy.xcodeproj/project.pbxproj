@@ -206,7 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				A1071A7B27EE625600DD124D /* HomeView */,
-				A1C7AA5027E3CABD009380BC /* WordView */,
+				A1C7AA5027E3CABD009380BC /* OneMinuteTestView */,
 				A15C207C27EA5AC0000528B3 /* SettingView */,
 				A159B36927EBD35C00369947 /* ResultsView */,
 				A126D99227F47165008DD0A5 /* StatisticsView */,
@@ -248,13 +248,13 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		A1C7AA5027E3CABD009380BC /* WordView */ = {
+		A1C7AA5027E3CABD009380BC /* OneMinuteTestView */ = {
 			isa = PBXGroup;
 			children = (
 				A16D4F8027E26BAC004BEDCE /* OneMinuteTestView.swift */,
 				A16D4FB227E27D58004BEDCE /* OneMinuteTestViewModel.swift */,
 			);
-			path = WordView;
+			path = OneMinuteTestView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
