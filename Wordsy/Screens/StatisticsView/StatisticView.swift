@@ -17,7 +17,7 @@ struct StatisticView: View {
 	var body: some View {
 		
 		ZStack{
-			goBackButtonSection
+			headerSection
 			
 			VStack {
 				
@@ -39,7 +39,7 @@ struct StatisticView: View {
 }
 
 extension StatisticView {
-	private var goBackButtonSection: some View {
+	private var headerSection: some View {
 		VStack {
 			HStack{
 				GoBackButtonView(usingVariable: $areStatisticsDisplayed)
