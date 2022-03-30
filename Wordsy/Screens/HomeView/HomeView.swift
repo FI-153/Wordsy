@@ -18,7 +18,7 @@ struct HomeView: View {
 			if isOneMinuteTestDisplayed {
 				WordView(isOneMinuteTestDisplayed: $isOneMinuteTestDisplayed)
 			} else if areStatisticsShown {
-				StatisticView()
+				StatisticView(areStatisticsDisplayed: $areStatisticsShown)
 			} else {
 				VStack{
 					

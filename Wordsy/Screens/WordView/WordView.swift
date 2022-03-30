@@ -19,22 +19,7 @@ struct WordView: View {
 		ZStack {
 			
 			Group {
-				BackgroundView()
-				
-				VStack {
-					HStack{
-						Button {
-							vm.isOneMinuteTestDisplayed = false
-						} label: {
-							ButtonView(text: "Home", color: .bgYellow, isSelected: true)
-						}
-						.buttonStyle(.plain)
-
-						Spacer()
-					}
-					Spacer()
-				}
-				.padding()
+				goBackButtonSection
 				
 				VStack{
 					
@@ -180,6 +165,17 @@ extension WordView {
 		.fixedSize(horizontal: true, vertical: false)
 		.frame(width: 250, alignment: .leading)
 		
+	}
+	
+	private var goBackButtonSection: some View{
+		VStack {
+			HStack{
+				GoBackButtonView(usingVariable: $vm.isOneMinuteTestDisplayed)
+				Spacer()
+			}
+			Spacer()
+		}
+		.padding()
 	}
 }
 
