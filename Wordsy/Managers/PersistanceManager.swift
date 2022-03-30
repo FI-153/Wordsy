@@ -10,9 +10,9 @@ import CoreData
 
 class PersistanceManager{
 	
-	static let shared = PersistanceManager()
-	let db:NSPersistentContainer
-	let context:NSManagedObjectContext
+	static var shared = PersistanceManager()
+	var db:NSPersistentContainer
+	var context:NSManagedObjectContext
 
 	private init(){
 		db = NSPersistentContainer(name: "Results")
@@ -42,6 +42,42 @@ class PersistanceManager{
 	func delete(_ object:NSManagedObject, completion: @escaping(Error?) -> () = {_ in}){
 		context.delete(object)
 		self.save(completion: completion)
+	}
+	
+	//MARK: - PLEASE REFACTOR ME...
+	func deleteAll(completion: @escaping(Error?) -> () = {_ in}) {
+		// Get a reference to a NSPersistentStoreCoordinator
+		let storeContainer =
+		db.persistentStoreCoordinator
+		
+		// Delete each existing persistent store
+		do {
+			for store in storeContainer.persistentStores {
+				try storeContainer.destroyPersistentStore(
+					at: store.url!,
+					ofType: store.type,
+					options: nil
+				)
+			}
+		} catch let error {
+			print(error.localizedDescription)
+		}
+		
+		// Re-create the persistent container
+		db = NSPersistentContainer(
+			name: "Results" // the name of
+			// a .xcdatamodeld file
+		)
+
+		// Calling loadPersistentStores will re-create the
+		// persistent stores
+		db.loadPersistentStores { (_, error) in
+			guard error == nil else {
+				fatalError("Impossible to load persistant store")
+			}
+		}
+		
+		context = db.viewContext
 	}
 	
 	func add(_ resultToBeSaved:TestResult){

@@ -48,7 +48,7 @@ extension ResultsSettingView {
 	
 	private var clearResultsButtonSection: some View{
 		Button {
-			
+			PersistanceManager.getShared().deleteAll()
 		} label: {
 			ButtonView(text: "Clear results", color: .red, isSelected: true, frameWidth: 200)
 		}

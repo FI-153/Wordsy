@@ -30,19 +30,26 @@ class StatisticViewModel: ObservableObject {
 	func getAvgWordsPm()-> Int {
 		let sum = fetchedResults.reduce(0) {$0 + $1.wordsPm}
 		
+		if sum.isZero() { return 0 }
+		
 		return Int(Float(sum)/Float(fetchedResults.count))
 	}
 	
 	func getAvgCharsPm()-> Int {
 		let sum = fetchedResults.reduce(0) {$0 + $1.charsPm}
 		
+		if sum.isZero() { return 0 }
+		
 		return Int(Float(sum)/Float(fetchedResults.count))
 	}
 	
 	func getAvgPrecision()-> Int {
+		
 		let sum = fetchedResults.reduce(0) {$0 + $1.precision}
 		
-		return Int(Float(sum)/Float(fetchedResults.count))
+		if sum.isZero() { return 0 }
+		
+		return  Int(Float(sum)/Float(fetchedResults.count))
 	}
 	
 }
