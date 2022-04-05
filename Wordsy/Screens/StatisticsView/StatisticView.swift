@@ -10,9 +10,11 @@ import SwiftUI
 import CoreData
 
 struct StatisticView: View {
-	@StateObject var vm = StatisticViewModel()
-	@Binding var areStatisticsDisplayed:Bool
-	@State var isSettingsViewDisplayed:Bool = false
+	@StateObject var vm:StatisticViewModel
+
+	init(areStatisticsDisplayed:Binding<Bool>){
+		self._vm = .init(wrappedValue: StatisticViewModel(areStatisticsDisplayed: areStatisticsDisplayed))
+	}
 	
 	var body: some View {
 		
@@ -32,8 +34,8 @@ struct StatisticView: View {
 				
 			}
 		}
-		.sheet(isPresented: $isSettingsViewDisplayed) {
-			ResultsSettingView(isSettingsViewDisplayed: $isSettingsViewDisplayed, areStatisticsDisplayed: $areStatisticsDisplayed)
+		.sheet(isPresented: $vm.isSettingsViewDisplayed) {
+			ResultsSettingView(isSettingsViewDisplayed: $vm.isSettingsViewDisplayed, areStatisticsDisplayed: $vm.areStatisticsDisplayed)
 		}
 	}
 }
@@ -42,12 +44,12 @@ extension StatisticView {
 	private var headerSection: some View {
 		VStack {
 			HStack{
-				GoBackButtonView(usingVariable: $areStatisticsDisplayed)
+				GoBackButtonView(usingVariable: $vm.areStatisticsDisplayed)
 				
 				Spacer()
 				
 				Button {
-					isSettingsViewDisplayed = true
+					vm.isSettingsViewDisplayed = true
 				} label: {
 					Image(systemName: "gearshape.fill")
 						.resizable()

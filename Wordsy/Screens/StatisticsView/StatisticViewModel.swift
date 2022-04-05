@@ -12,8 +12,11 @@ class StatisticViewModel: ObservableObject {
 	var db:PersistanceManager = PersistanceManager.getShared()
 	
 	@Published var fetchedResults:[SavedResult] = []
-	
-	init(){
+	@Published var isSettingsViewDisplayed:Bool = false
+	@Binding var areStatisticsDisplayed:Bool
+
+	init(areStatisticsDisplayed:Binding<Bool>){
+		self._areStatisticsDisplayed = areStatisticsDisplayed
 		fetchAllSavedResults()
 	}
 	
