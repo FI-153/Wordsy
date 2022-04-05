@@ -14,7 +14,12 @@ class OneMinuteTestViewModel: ObservableObject {
 	private let wordManager = WordManager()
 	private let scoreManager = ScoreManager.getShared()
 	private var cancellables = Set<AnyCancellable>()
+	
+#if DEBUG
 	private let standardTimerValue = 5
+#else
+	private let standardTimerValue = 60
+#endif
 	
 	@Published var nextWords:[Word]
 	@Published var typedWords:[Word]
