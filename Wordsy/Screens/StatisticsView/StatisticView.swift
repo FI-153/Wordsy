@@ -23,14 +23,26 @@ struct StatisticView: View {
 			
 			VStack {
 				
-				Text("Average Values")
-					.font(.largeTitle)
-				
 				HStack(spacing: 50) {
 					DataRectangleViewPadded(value: vm.getAvgWordsPm(), information: "words/min")
 					DataRectangleViewPadded(value: vm.getAvgCharsPm(), information: "chars/min")
 					DataRectangleViewPadded(value: vm.getAvgPrecision(), information: "precision")
 				}
+				
+				List {
+					ForEach(vm.fetchedResults) { result in
+						ResultView(timestamp: result.timestamp ?? Date.distantPast,
+								   wordsPm: result.wordsPm,
+								   charsPm: result.charsPm,
+								   precision: result.precision)
+							.modifier(CenterModifier())
+							.padding([.top, .horizontal])
+					}
+				}
+				.listStyle(.plain)
+				.frame(width: 680, height: 350)
+				.clipShape(RoundedRectangle(cornerRadius: 30))
+				.padding(.top)
 				
 			}
 		}

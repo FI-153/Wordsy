@@ -30,6 +30,8 @@
 		A16D4FB027E26C26004BEDCE /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D4FAF27E26C26004BEDCE /* Word.swift */; };
 		A16D4FB327E27D58004BEDCE /* OneMinuteTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D4FB227E27D58004BEDCE /* OneMinuteTestViewModel.swift */; };
 		A16D4FB627E28044004BEDCE /* OneMinuteWordViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D4FB527E28044004BEDCE /* OneMinuteWordViewModelTests.swift */; };
+		A193974027FCAEAF0007BF13 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A193973F27FCAEAF0007BF13 /* ResultView.swift */; };
+		A193974227FCB9040007BF13 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A193974127FCB9040007BF13 /* Modifiers.swift */; };
 		A1ABE04D27E905000049EC6C /* ScoreManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1ABE04C27E905000049EC6C /* ScoreManger.swift */; };
 		A1ABE04F27E905BD0049EC6C /* ScoreManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1ABE04E27E905BD0049EC6C /* ScoreManagerTests.swift */; };
 		A1BD467627ED114B00AB7D59 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BD467527ED114B00AB7D59 /* Enums.swift */; };
@@ -80,6 +82,8 @@
 		A16D4FAF27E26C26004BEDCE /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		A16D4FB227E27D58004BEDCE /* OneMinuteTestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneMinuteTestViewModel.swift; sourceTree = "<group>"; };
 		A16D4FB527E28044004BEDCE /* OneMinuteWordViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneMinuteWordViewModelTests.swift; sourceTree = "<group>"; };
+		A193973F27FCAEAF0007BF13 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		A193974127FCB9040007BF13 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		A1ABE04C27E905000049EC6C /* ScoreManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreManger.swift; sourceTree = "<group>"; };
 		A1ABE04E27E905BD0049EC6C /* ScoreManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreManagerTests.swift; sourceTree = "<group>"; };
 		A1BD467527ED114B00AB7D59 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
@@ -140,6 +144,7 @@
 			children = (
 				A1E9E03427E78F8B00CBDD6E /* Extensions.swift */,
 				A1BD467527ED114B00AB7D59 /* Enums.swift */,
+				A193974127FCB9040007BF13 /* Modifiers.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -262,6 +267,7 @@
 				A1C7AA5127E3CADB009380BC /* SecondsView.swift */,
 				A109F9B927E539EE004DE4AA /* DataRectangleView.swift */,
 				A159B36727EBAE0100369947 /* DataRectangleViewPadded.swift */,
+				A193973F27FCAEAF0007BF13 /* ResultView.swift */,
 			);
 			path = "Data Displayers";
 			sourceTree = "<group>";
@@ -389,6 +395,7 @@
 			files = (
 				A1C7AA5227E3CADB009380BC /* SecondsView.swift in Sources */,
 				A109F9BA27E539EE004DE4AA /* DataRectangleView.swift in Sources */,
+				A193974227FCB9040007BF13 /* Modifiers.swift in Sources */,
 				A126D99427F47195008DD0A5 /* StatisticView.swift in Sources */,
 				A1C623A027F4B3FC005D18AE /* ResultsSettingView.swift in Sources */,
 				A159B36227EBA53700369947 /* BackgroundView.swift in Sources */,
@@ -398,6 +405,7 @@
 				A159B36427EBAA5500369947 /* TestResult.swift in Sources */,
 				A16D4FAD27E26C15004BEDCE /* WordManager.swift in Sources */,
 				A1071A7327EE554C00DD124D /* Results.xcdatamodeld in Sources */,
+				A193974027FCAEAF0007BF13 /* ResultView.swift in Sources */,
 				A1E9E03527E78F8B00CBDD6E /* Extensions.swift in Sources */,
 				A1ABE04D27E905000049EC6C /* ScoreManger.swift in Sources */,
 				A1071A7827EE5EEC00DD124D /* ResultsViewModel.swift in Sources */,
