@@ -19,31 +19,13 @@ struct OneMinuteTestView: View {
 		ZStack {
 			
 			Group {
-				goBackButtonSection
+				headerSection
 				
 				VStack{
 					
 					Spacer()
 					
-					HStack(spacing: 15){
-						
-						SecondsView(value: $vm.timerValue)
-							.onReceive(vm.timerManager.timer) { timeElapsed in
-								
-								if vm.timerValue == 0 {
-									vm.stopTimer()
-									vm.registerResults()
-								} else {
-									vm.timerValueMinusOne()
-								}
-							}
-							.padding(.trailing, 40)
-						
-						DataRectangleView(value: $vm.wordsPerMinute, information: "Words/min")
-						DataRectangleView(value: $vm.charsPerMinute, information: "Chars/min")
-						DataRectangleView(value: $vm.precision, information: "% acccuracy")
-						
-					}
+					statisticsView
 					
 					Group{
 						HStack{
@@ -51,10 +33,7 @@ struct OneMinuteTestView: View {
 							currentWordSection
 							nextWordSection
 						}
-						.font(.title2)
-						.frame(height: 80)
-						.frame(maxWidth: .infinity)
-						.background(Color.white)
+						.modifier(TypingViewModifiers())
 					}
 					.offset(y: 40)
 					
@@ -73,15 +52,7 @@ struct OneMinuteTestView: View {
 			
 			if vm.isResultViewShown {
 				if let result = vm.result {
-					ZStack {
-						RoundedRectangle(cornerRadius: 15)
-							.fill(Material.thin)
-						
-						ResultsView(result: result, isResultViewShown: $vm.isResultViewShown)
-					}
-					.onDisappear{
-						vm.reset()
-					}
+					showResults(for: result)
 				} else {
 					Text("Unable to load results...")
 						.font(.largeTitle)
@@ -93,18 +64,23 @@ struct OneMinuteTestView: View {
 	}
 }
 
+struct TypingViewModifiers: ViewModifier {
+	func body(content: Content) -> some View {
+		content
+			.font(.title2)
+			.frame(height: 80)
+			.frame(maxWidth: .infinity)
+			.background(Color.white)
+	}
+}
+
 extension OneMinuteTestView {
 	private var typedWordSection: some View {
 		HStack{
 			ForEach(vm.typedWords) { word in
-				if word.wasTypedCorrecly {
-					Text(word.value)
-						.foregroundColor(.green.opacity(0.7))
-				} else {
-					Text(word.value)
-						.foregroundColor(.red.opacity(0.7))
-						.strikethrough()
-				}
+				Text(word.value)
+					.foregroundColor(word.wasTypedCorrecly ? .green.opacity(0.7) : .red.opacity(0.7))
+					.strikethrough(!word.wasTypedCorrecly)
 			}
 		}
 		.fixedSize(horizontal: true, vertical: false)
@@ -125,22 +101,10 @@ extension OneMinuteTestView {
 			}
 			.textFieldStyle(.plain)
 			.onSubmit {
-				
 				vm.startTimerIfNoneAreActive()
-				
-				if vm.isTypedWordCorrect() {
-					vm.registerCorrectWord()
-				} else {
-					vm.registerWrongWord()
-				}
 			}
 			.onChange(of: vm.typedWord) { wordBeingTyped in
-				
-				vm.startTimerIfNoneAreActive()
-				
-				if wordBeingTyped == vm.currentWord.value.appending(" ") {
-					vm.registerCorrectWord()
-				}
+				vm.checkSpelling(of: wordBeingTyped)
 			}
 			
 		}
@@ -151,23 +115,22 @@ extension OneMinuteTestView {
 	
 	private var nextWordSection: some View{
 		HStack{
-			ForEach(vm.nextWords, id: \.self) { word in
+			ForEach(vm.nextWords) { word in
 				
 				if vm.difficulty == .medium || vm.difficulty == .hard {
 					Text(word.value.toDots())
-						.foregroundColor(.black)
 				} else {
 					Text(word.value)
-						.foregroundColor(.black)
 				}
 			}
 		}
+		.foregroundColor(.primary)
 		.fixedSize(horizontal: true, vertical: false)
 		.frame(width: 250, alignment: .leading)
 		
 	}
 	
-	private var goBackButtonSection: some View{
+	private var headerSection: some View{
 		VStack {
 			HStack{
 				GoBackButtonView(usingVariable: $vm.isOneMinuteTestDisplayed)
@@ -177,12 +140,41 @@ extension OneMinuteTestView {
 		}
 		.padding()
 	}
+	
+	private var statisticsView: some View{
+		HStack(spacing: 15){
+			
+			SecondsView(value: $vm.timerValue)
+				.onReceive(vm.timerManager.timer) { _ in
+					vm.updateTimer()
+				}
+				.padding(.trailing, 40)
+			
+			DataRectangleView(value: $vm.wordsPerMinute, information: "Words/min")
+			DataRectangleView(value: $vm.charsPerMinute, information: "Chars/min")
+			DataRectangleView(value: $vm.precision, information: "% acccuracy")
+			
+		}
+	}
+	
+	private func showResults(for result:TestResult) -> some View{
+		ZStack {
+			RoundedRectangle(cornerRadius: 15)
+				.fill(Material.thin)
+			
+			ResultsView(result: result, isResultViewShown: $vm.isResultViewShown)
+		}
+		.onDisappear{
+			vm.reset()
+		}
+	}
 }
 
 
 struct ContentView_Previews: PreviewProvider {
 	static var previews: some View {
 		OneMinuteTestView(isOneMinuteTestDisplayed: .constant(false))
+			.frame(width: 1000, height: 700)
 			.preferredColorScheme(.light)
 	}
 }

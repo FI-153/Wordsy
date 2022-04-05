@@ -31,3 +31,12 @@ extension Int16 {
 		return self == 0
 	}
 }
+
+extension Text {
+	func strikethrough(_ isTrue:Bool) -> Text {
+		if isTrue{
+			return self.strikethrough()
+		}
+		return self
+	}
+}

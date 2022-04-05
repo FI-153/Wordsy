@@ -104,6 +104,10 @@ class OneMinuteTestViewModel: ObservableObject {
 	}
 	
 	func isTypedWordCorrect() -> Bool {
+		if typedWord.hasSuffix(" "){
+			typedWord.removeLast()
+		}
+		
 		return typedWord == currentWord.value
 	}
 	
@@ -169,6 +173,30 @@ class OneMinuteTestViewModel: ObservableObject {
 		wordManager.reset()
 		scoreManager.reset()
 		wordManager.initialise()
+	}
+	
+	func checkSpelling(of wordBeingTyped:String){
+		
+		if wordBeingTyped.isEmpty {
+			startTimerIfNoneAreActive()
+		}
+		
+		if wordBeingTyped.contains(" ") {
+			if isTypedWordCorrect() {
+				registerCorrectWord()
+			} else {
+				registerWrongWord()
+			}
+		}
+	}
+	
+	func updateTimer(){
+		if timerValue == 0 {
+			stopTimer()
+			registerResults()
+		} else {
+			timerValueMinusOne()
+		}
 	}
 	
 }
