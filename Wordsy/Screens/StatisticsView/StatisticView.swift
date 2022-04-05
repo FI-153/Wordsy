@@ -22,28 +22,8 @@ struct StatisticView: View {
 			headerSection
 			
 			VStack {
-				
-				HStack(spacing: 50) {
-					DataRectangleViewPadded(value: vm.getAvgWordsPm(), information: "words/min")
-					DataRectangleViewPadded(value: vm.getAvgCharsPm(), information: "chars/min")
-					DataRectangleViewPadded(value: vm.getAvgPrecision(), information: "precision")
-				}
-				
-				List {
-					ForEach(vm.fetchedResults) { result in
-						ResultView(timestamp: result.timestamp ?? Date.distantPast,
-								   wordsPm: result.wordsPm,
-								   charsPm: result.charsPm,
-								   precision: result.precision)
-							.modifier(CenterModifier())
-							.padding([.top, .horizontal])
-					}
-				}
-				.listStyle(.plain)
-				.frame(width: 680, height: 350)
-				.clipShape(RoundedRectangle(cornerRadius: 30))
-				.padding(.top)
-				
+				avgValuesSection
+				resultsListSection
 			}
 		}
 		.sheet(isPresented: $vm.isSettingsViewDisplayed) {
@@ -75,12 +55,41 @@ extension StatisticView {
 		}
 		.padding()
 	}
+	
+	private var resultsListSection: some View{
+		List {
+			ForEach(vm.fetchedResults) { result in
+				ResultView(timestamp: result.timestamp ?? Date.distantPast,
+						   wordsPm: result.wordsPm,
+						   charsPm: result.charsPm,
+						   precision: result.precision)
+					.modifier(CenterModifier())
+					.padding(.top)
+			}
+		}
+		.listStyle(.plain)
+		.frame(width: 680, height: 350)
+		.clipShape(RoundedRectangle(cornerRadius: 30))
+		.padding(.top)
+	}
+	
+	private var avgValuesSection: some View{
+		HStack(spacing: 50) {
+			DataRectangleViewPadded(value: vm.getAvgWordsPm(), information: "words/min")
+			DataRectangleViewPadded(value: vm.getAvgCharsPm(), information: "chars/min")
+			DataRectangleViewPadded(value: vm.getAvgPrecision(), information: "precision")
+		}
+	}
 }
 
 struct StatisticView_Previews: PreviewProvider {
 	static var previews: some View {
-		StatisticView(areStatisticsDisplayed: .constant(true))
-			.preferredColorScheme(.light)
+		ZStack {
+			BackgroundView()
+			
+			StatisticView(areStatisticsDisplayed: .constant(true))
+				.preferredColorScheme(.light)
 			.frame(width: 1000, height: 700)
+		}
 	}
 }

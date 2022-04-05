@@ -25,6 +25,7 @@ class StatisticViewModel: ObservableObject {
 		
 		do {
 			fetchedResults = try db.context.fetch(request)
+			fetchedResults = fetchedResults.reversed()
 		} catch let error {
 			print(error.localizedDescription)
 		}
