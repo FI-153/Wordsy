@@ -309,6 +309,8 @@
 			dependencies = (
 			);
 			name = Wordsy;
+			packageProductDependencies = (
+			);
 			productName = Wordsy;
 			productReference = A16D4F7B27E26BAC004BEDCE /* Wordsy.app */;
 			productType = "com.apple.product-type.application";
@@ -359,6 +361,8 @@
 				Base,
 			);
 			mainGroup = A16D4F7227E26BAC004BEDCE;
+			packageReferences = (
+			);
 			productRefGroup = A16D4F7C27E26BAC004BEDCE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";

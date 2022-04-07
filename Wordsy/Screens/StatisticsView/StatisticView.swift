@@ -23,6 +23,10 @@ struct StatisticView: View {
 			
 			VStack {
 				avgValuesSection
+					.padding()
+				
+				Divider()
+				
 				resultsListSection
 			}
 		}
@@ -74,10 +78,15 @@ extension StatisticView {
 	}
 	
 	private var avgValuesSection: some View{
-		HStack(spacing: 50) {
-			DataRectangleViewPadded(value: vm.getAvgWordsPm(), information: "words/min")
-			DataRectangleViewPadded(value: vm.getAvgCharsPm(), information: "chars/min")
-			DataRectangleViewPadded(value: vm.getAvgPrecision(), information: "precision")
+		VStack{
+			Text("Average Values")
+				.font(.system(size: 30, weight: .medium))
+			
+			HStack(spacing: 50) {
+				DataRectangleViewPadded(value: vm.getAvgWordsPm(), information: "words/min")
+				DataRectangleViewPadded(value: vm.getAvgCharsPm(), information: "chars/min")
+				DataRectangleViewPadded(value: vm.getAvgPrecision(), information: "precision")
+			}
 		}
 	}
 }
@@ -89,7 +98,7 @@ struct StatisticView_Previews: PreviewProvider {
 			
 			StatisticView(areStatisticsDisplayed: .constant(true))
 				.preferredColorScheme(.light)
-			.frame(width: 1000, height: 700)
+				.frame(width: 1000, height: 700)
 		}
 	}
 }
