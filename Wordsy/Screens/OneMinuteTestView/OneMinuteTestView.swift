@@ -77,7 +77,7 @@ struct TypingViewModifiers: ViewModifier {
 extension OneMinuteTestView {
 	private var typedWordSection: some View {
 		HStack{
-			ForEach(vm.typedWords) { word in
+			ForEach(vm.wordManager.typedWords) { word in
 				Text(word.value)
 					.foregroundColor(word.wasTypedCorrecly ? .green.opacity(0.7) : .red.opacity(0.7))
 					.strikethrough(!word.wasTypedCorrecly)
@@ -89,7 +89,7 @@ extension OneMinuteTestView {
 	
 	private var currentWordSection: some View{
 		ZStack {
-			Text(vm.currentWord.value.appending(" "))
+			Text(vm.wordManager.currentWord.value.appending(" "))
 				.foregroundColor(.secondary)
 			
 			Group {
@@ -115,7 +115,7 @@ extension OneMinuteTestView {
 	
 	private var nextWordSection: some View{
 		HStack{
-			ForEach(vm.nextWords) { word in
+			ForEach(vm.wordManager.nextWords) { word in
 				
 				if vm.difficulty == .medium || vm.difficulty == .hard {
 					Text(word.value.toDots())

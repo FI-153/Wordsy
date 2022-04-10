@@ -22,36 +22,23 @@ struct Word: Identifiable, Hashable{
 	static func == (lhs: Word, rhs: Word) -> Bool {
 		lhs.value == rhs.value
 	}
-		
-	static let words:[Word] = [
-		Word("Commander"),
-		Word("Leutenant"),
-		Word("Enseign"),
-		Word("Picard"),
-		Word("Archer"),
-		Word("Sisko"),
-		Word("Enterprise"),
-		Word("Voyager"),
-		Word("DS9"),
-		Word("ncc-1701-d"),
-		Word("Miranda"),
-		Word("Sovereign"),
-		Word("Galaxy"),
-		Word("Defiant"),
-		Word("Intrepid"),
-		Word("Captain"),
+			
+	static let words:[String] = [
+		"Commander",
+		"Leutenant",
+		"Enseign",
+		"Picard",
+		"Archer",
+		"Sisko",
+		"Enterprise",
+		"Voyager",
+		"DS9",
+		"Miranda",
+		"Sovereign",
+		"Galaxy",
+		"Defiant",
+		"Intrepid",
+		"Captain",
 	]
 	
-	static let startingWords:[Word] = [
-		Word("Enterprise"),
-		Word("Voyager"),
-		Word("DS9"),
-		Word("ncc-1701-d"),
-		Word("Miranda"),
-		Word("Sovereign"),
-		Word("Galaxy"),
-		Word("Defiant"),
-		Word("Intrepid"),
-		Word("Captain"),
-	]
 }

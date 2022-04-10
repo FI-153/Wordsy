@@ -25,8 +25,8 @@ class WordManagerTest: XCTestCase {
 		//When
 		//Then
 		assertEmpty(array: wordManager.typedWords)
-		XCTAssertEqual(wordManager.nextWords.count, Word.startingWords.count)
-		XCTAssertEqual(wordManager.currentWord, Word.startingWords.first!)
+		XCTAssertEqual(wordManager.nextWords.count, 10)
+		XCTAssertFalse(wordManager.currentWord.value.isEmpty)
 	}
 	
 	func test_WordManager_initialise_allValuesInitialisedCorrectly() {
@@ -35,15 +35,15 @@ class WordManagerTest: XCTestCase {
 		wordManager.initialise()
 		//Then
 		assertEmpty(array: wordManager.typedWords)
-		XCTAssertEqual(wordManager.nextWords.count, Word.startingWords.count)
-		XCTAssertEqual(wordManager.currentWord, Word.startingWords.first!)
+		XCTAssertEqual(wordManager.nextWords.count, 10)
+		XCTAssertFalse(wordManager.currentWord.value.isEmpty)
 	}
 	
 	func test_WordManager_showNextWord_theNextWordIsIssued(){
 		//Given
 		//When
 		//Then
-		XCTAssertEqual(wordManager.nextWords.first!, wordManager.showNextWord())
+		XCTAssertEqual(wordManager.nextWords.first!, wordManager.getNextWord())
 	}
 	
 	func test_WordManager_assignCurrentWordToNextWord_theNextWordIsAssignedToTheCurrent(){
@@ -107,7 +107,7 @@ class WordManagerTest: XCTestCase {
 	
 	func test_WordManager_assignANewWord_theAssignmentReflectsExpectedChanges(){
 		//Given
-		let expectedCurrentWord = wordManager.showNextWord()
+		let expectedCurrentWord = wordManager.getNextWord()
 		let expectedFirstElementOfNextWords = wordManager.nextWords[1]
 		//When
 		wordManager.assignANewWord()

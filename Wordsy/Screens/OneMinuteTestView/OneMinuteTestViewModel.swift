@@ -11,7 +11,7 @@ import SwiftUI
 
 class OneMinuteTestViewModel: ObservableObject {
 	
-	private let wordManager = WordManager()
+	 let wordManager = WordManager()
 	private let scoreManager = ScoreManager.getShared()
 	private var cancellables = Set<AnyCancellable>()
 	
@@ -21,9 +21,6 @@ class OneMinuteTestViewModel: ObservableObject {
 	private let standardTimerValue = 60
 #endif
 	
-	@Published var nextWords:[Word]
-	@Published var typedWords:[Word]
-	@Published var currentWord:Word
 	@Published var timerValue:Int
 	@Published var typedWord:String
 	@Published var wordsPerMinute:Int
@@ -36,9 +33,6 @@ class OneMinuteTestViewModel: ObservableObject {
 	@Binding var isOneMinuteTestDisplayed:Bool
 
 	init(isOneMinuteTestDisplayed:Binding<Bool>){
-		self.nextWords = Array()
-		self.typedWords = Array()
-		self.currentWord = Word(.empty)
 		self.typedWord = .empty
 		self.timerValue = standardTimerValue
 		self.wordsPerMinute = 0
@@ -48,35 +42,11 @@ class OneMinuteTestViewModel: ObservableObject {
 		self.difficulty = .easy
 		self._isOneMinuteTestDisplayed = isOneMinuteTestDisplayed
 
-		subscribeToCurrentWord()
-		subscribeToTypedWords()
-		subscribeToNextWords()
 		subscribeToWordsPerMinute()
 		subscribeToCharsPerMinute()
 		subscribeToPrecision()
 	}
-	
-	func subscribeToCurrentWord(){
-		wordManager.$currentWord.sink { newCurrentWord in
-			self.currentWord = newCurrentWord
-		}
-		.store(in: &cancellables)
-	}
-	
-	func subscribeToTypedWords(){
-		wordManager.$typedWords.sink { typedWords in
-			self.typedWords = typedWords
-		}
-		.store(in: &cancellables)
-	}
-	
-	func subscribeToNextWords(){
-		wordManager.$nextWords.sink { nextWords in
-			self.nextWords = nextWords
-		}
-		.store(in: &cancellables)
-	}
-	
+		
 	func subscribeToWordsPerMinute(){
 		scoreManager.$wordsPerMinute.sink { newValue in
 			self.wordsPerMinute = Int(newValue)
@@ -108,7 +78,7 @@ class OneMinuteTestViewModel: ObservableObject {
 			typedWord.removeLast()
 		}
 		
-		return typedWord == currentWord.value
+		return typedWord == wordManager.currentWord.value
 	}
 	
 	func timerValueMinusOne(){
@@ -142,8 +112,8 @@ class OneMinuteTestViewModel: ObservableObject {
 	
 	func updateScore() {
 		scoreManager.increaseWordsPerMinute()
-		scoreManager.increaseCharsPerMinute(with: currentWord.value)
-		scoreManager.updatePrecision(for: typedWords)
+		scoreManager.increaseCharsPerMinute(with: wordManager.currentWord.value)
+		scoreManager.updatePrecision(for: wordManager.typedWords)
 	}
 	
 	func registerCorrectWord(){

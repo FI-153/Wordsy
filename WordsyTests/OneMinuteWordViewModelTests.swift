@@ -23,28 +23,7 @@ class OneMinuteWordViewModelTests: XCTestCase {
 		self.vm = nil
 	}
 	
-	func test_oneMinuteWordViewModelTests_subscribeToCurrentWord_thwTwoValuesAreTheSame(){
-		//Given
-		//When
-		//Then
-		XCTAssertEqual(wordManager.currentWord, vm.currentWord)
-	}
-	
-	func test_oneMinuteWordViewModelTests_subscribeToTypedWords_thwTwoValuesAreTheSame(){
-		//Given
-		//When
-		//Then
-		XCTAssertEqual(wordManager.typedWords, vm.typedWords)
-	}
-	
-//	func test_oneMinuteWordViewModelTests_subscribeToNextWords_thwTwoValuesAreTheSame(){
-//		//Given
-//		//When
-//		//Then
-//		XCTAssertEqual(wordManager.nextWords, vm.nextWords)
-//	}
-//
-	
+		
 	func test_oneMinuteWordViewModelTests_init_teTypedWordIsEmpty(){
 		//Given
 		//When
@@ -52,31 +31,9 @@ class OneMinuteWordViewModelTests: XCTestCase {
 		XCTAssertTrue(vm.typedWord.isEmpty)
 	}
 	
-	func test_oneMinuteWordViewModelTests_registerWord_theArraysAdjustsAndCurrentWordIsUpdated(){
-		//Given
-		let expectedCurrentWord = wordManager.showNextWord()
-		let expectedFirstElementOfTypedWords = vm.currentWord
-		let expectedFirstElementOfNextWords = vm.nextWords[1]
-		//When
-		vm.registerWord()
-		//Then
-		XCTAssertEqual(vm.currentWord, expectedCurrentWord)
-		XCTAssertEqual(vm.typedWords.first, expectedFirstElementOfTypedWords)
-		XCTAssertEqual(vm.nextWords.first, expectedFirstElementOfNextWords)
-	}
-	
-	func test_oneMinuteWordViewModelTests_registerWord_newRandomWordAddedToNextWords(){
-		//Given
-		let expectedArrayLength = vm.nextWords.count
-		//When
-		vm.registerWord()
-		//Then
-		XCTAssertEqual(vm.nextWords.count, expectedArrayLength)
-	}
-	
 	func test_oneMinuteWordViewModelTests_isTypedWordCorrect_theTypedWordIsCorrect(){
 		//Given
-		vm.currentWord = Word("abc")
+		vm.wordManager.currentWord = Word("abc")
 		//When
 		vm.typedWord = "abc"
 		//Then
@@ -85,7 +42,7 @@ class OneMinuteWordViewModelTests: XCTestCase {
 	
 	func test_oneMinuteWordViewModelTests_isTypedWordCorrect_theTypedWordIsNotCorrect(){
 		//Given
-		vm.currentWord = Word("abc")
+		vm.wordManager.currentWord = Word("abc")
 		//When
 		vm.typedWord = "abd"
 		//Then
@@ -111,7 +68,7 @@ class OneMinuteWordViewModelTests: XCTestCase {
 	
 	func test_oneMinuteWordViewModelTests_setAsCorrectlyTyped_theWordIsSetAsCorrectlyTyped(){
 		vm.setAsCorrectlyTyped()
-		XCTAssertTrue(vm.currentWord.wasTypedCorrecly)
+		XCTAssertTrue(vm.wordManager.currentWord.wasTypedCorrecly)
 	}
 	
 	func test_oneMinuteWordViewModelTests_registerResults_resultIsCorrectelyCreatedAndAdjusted(){

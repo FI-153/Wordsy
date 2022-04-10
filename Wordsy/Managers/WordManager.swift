@@ -19,16 +19,16 @@ class WordManager {
 	
 	func initialise(){
 		reset()
-		self.nextWords = Word.startingWords
+		initiliseNextWords()
 		assignANewWord()
 	}
 	
-	func showNextWord() -> Word {
+	func getNextWord() -> Word {
 		return nextWords.first!
 	}
 	
 	func assignCurrentWordToNextWord(){
-		currentWord = showNextWord()
+		currentWord = getNextWord()
 	}
 	
 	func addToTypedWords() {
@@ -58,7 +58,13 @@ class WordManager {
 	}
 	
 	func getNewRandomWord(){
-		nextWords.append(Word.words.randomElement()!)
+		nextWords.append(Word(Word.words[Int.random(in: 0..<Word.words.count)]))
+	}
+	
+	func initiliseNextWords(){
+		for _ in 0...9 {
+			getNewRandomWord()
+		}
 	}
 	
 	func assignANewWord(){
