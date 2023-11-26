@@ -24,7 +24,7 @@ class StatisticViewModel: ObservableObject {
 		let request = NSFetchRequest<SavedResult>(entityName: "SavedResult")
 		
 		do {
-			fetchedResults = try db.context.fetch(request)
+			fetchedResults = try db.getContext().fetch(request)
 			fetchedResults = fetchedResults.reversed()
 		} catch let error {
 			print(error.localizedDescription)

@@ -10,9 +10,9 @@ import CoreData
 
 class PersistanceManager{
 	
-	static var shared = PersistanceManager()
-	var db:NSPersistentContainer
-	var context:NSManagedObjectContext
+	private static var shared = PersistanceManager()
+	private var db:NSPersistentContainer
+	private var context:NSManagedObjectContext
 
 	private init(){
 		db = NSPersistentContainer(name: "Results")
@@ -27,8 +27,12 @@ class PersistanceManager{
 	static func getShared() -> PersistanceManager{
 		return shared
 	}
+    
+    func getContext() -> NSManagedObjectContext {
+        context
+    }
 	
-	func save(completion: @escaping(Error?) -> () = {_ in}) {
+	private func save(completion: @escaping(Error?) -> () = {_ in}) {
 		if context.hasChanges {
 			do{
 				try context.save()
@@ -39,7 +43,7 @@ class PersistanceManager{
 		}
 	}
 	
-	func delete(_ object:NSManagedObject, completion: @escaping(Error?) -> () = {_ in}){
+	private func delete(_ object:NSManagedObject, completion: @escaping(Error?) -> () = {_ in}){
 		context.delete(object)
 		self.save(completion: completion)
 	}

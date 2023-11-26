@@ -10,10 +10,10 @@ import Combine
 
 class TimerManager{
 	
-	var timer = Timer.publish(every: 10000, on: .main, in: .common).autoconnect()
-	var timerIsRunning:Bool = false
+	@Published var timer = Timer.publish(every: 10000, on: .main, in: .common).autoconnect()
+	@Published var timerIsRunning:Bool = false
 	
-	static let shared = TimerManager()
+	private static let shared = TimerManager()
 	private init(){}
 	
 	static func getShared() -> TimerManager {

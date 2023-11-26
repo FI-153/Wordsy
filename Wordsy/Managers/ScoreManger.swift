@@ -12,7 +12,7 @@ class ScoreManager{
 	@Published var charsPerMinute:Int
 	@Published var precision:Float
 	
-	static let shared = ScoreManager()
+	private static let shared = ScoreManager()
 	
 	private init(){
 		self.wordsPerMinute = 0
