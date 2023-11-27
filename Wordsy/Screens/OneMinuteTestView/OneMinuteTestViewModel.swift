@@ -78,7 +78,7 @@ class OneMinuteTestViewModel: ObservableObject {
 			typedWord.removeLast()
 		}
 		
-		return typedWord == wordManager.currentWord.value
+		return typedWord == wordManager.currentWord.getValue()
 	}
 	
 	func timerValueMinusOne(){
@@ -112,7 +112,7 @@ class OneMinuteTestViewModel: ObservableObject {
 	
 	func updateScore() {
 		scoreManager.increaseWordsPerMinute()
-		scoreManager.increaseCharsPerMinute(with: wordManager.currentWord.value)
+		scoreManager.increaseCharsPerMinute(with: wordManager.currentWord.getValue())
 		scoreManager.updatePrecision(for: wordManager.typedWords)
 	}
 	

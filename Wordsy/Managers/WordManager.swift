@@ -71,7 +71,7 @@ class WordManager {
 	}
 	
 	func assignANewWord(){
-		if !currentWord.value.isEmpty {
+		if !currentWord.getValue().isEmpty {
 			addToTypedWords()
 		}
 		assignCurrentWordToNextWord()
@@ -80,6 +80,6 @@ class WordManager {
 	}
 	
 	func setAsCorrectlyTyped(){
-		self.currentWord.wasTypedCorrecly = true
+		self.currentWord.setWasTypedCorrecly(to: true)
 	}
 }

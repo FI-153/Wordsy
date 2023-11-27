@@ -33,7 +33,7 @@ class ScoreManager{
 	}
 	
 	func updatePrecision(for typedWords: [Word]) {
-		let correctWords = typedWords.filter { $0.wasTypedCorrecly }
+		let correctWords = typedWords.filter { $0.getWasTypedCorrectly() }
 		precision = round(Float(correctWords.count)/Float(typedWords.count) * 100)
 	}
 	

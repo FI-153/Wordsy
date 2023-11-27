@@ -78,9 +78,9 @@ extension OneMinuteTestView {
 	private var typedWordSection: some View {
 		HStack{
 			ForEach(vm.wordManager.typedWords) { word in
-				Text(word.value)
-					.foregroundColor(word.wasTypedCorrecly ? .green.opacity(0.7) : .red.opacity(0.7))
-					.strikethrough(!word.wasTypedCorrecly)
+				Text(word.getValue())
+					.foregroundColor(word.getWasTypedCorrectly() ? .green.opacity(0.7) : .red.opacity(0.7))
+					.strikethrough(!word.getWasTypedCorrectly())
 			}
 		}
 		.fixedSize(horizontal: true, vertical: false)
@@ -89,7 +89,7 @@ extension OneMinuteTestView {
 	
 	private var currentWordSection: some View{
 		ZStack {
-			Text(vm.wordManager.currentWord.value.appending(" "))
+			Text(vm.wordManager.currentWord.getValue().appending(" "))
 				.foregroundColor(.secondary)
 			
 			Group {
@@ -118,9 +118,9 @@ extension OneMinuteTestView {
 			ForEach(vm.wordManager.nextWords) { word in
 				
 				if vm.difficulty == .medium || vm.difficulty == .hard {
-					Text(word.value.toDots())
+					Text(word.getValue().toDots())
 				} else {
-					Text(word.value)
+					Text(word.getValue())
 				}
 			}
 		}
