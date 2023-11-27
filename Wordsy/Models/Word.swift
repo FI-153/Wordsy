@@ -23,22 +23,6 @@ struct Word: Identifiable, Hashable{
 		lhs.value == rhs.value
 	}
 			
-	static let words:[String] = [
-		"Commander",
-		"Leutenant",
-		"Enseign",
-		"Picard",
-		"Archer",
-		"Sisko",
-		"Enterprise",
-		"Voyager",
-		"DS9",
-		"Miranda",
-		"Sovereign",
-		"Galaxy",
-		"Defiant",
-		"Intrepid",
-		"Captain",
-	]
-	
+    ///300 words of maximum 6 chracters without duplicates
+    static let availableWords: [String] = ["apple", "happy", "breeze", "jolly", "music", "sunny", "candy", "laugh", "chirp", "lucky", "quick", "dream", "magic", "shine", "smile", "swift", "heart", "sugar", "cloud", "merry", "green", "peace", "funny", "sweet", "spark", "charm", "grace", "giddy", "cheer", "charm", "bliss", "vivid", "serene", "fresh", "clear", "quiet", "lively", "sleek", "happy", "sunny", "peace", "dream", "laugh", "sweet", "quick", "cloud", "music", "smile", "shine", "swift", "heart", "sugar", "green", "peace", "funny", "charm", "grace", "giddy", "cheer", "charm", "bliss", "vivid", "serene", "fresh", "clear", "quiet", "lively", "sleek", "happy", "sunny", "peace", "dream", "laugh", "sweet", "quick", "cloud", "music", "smile", "shine", "swift", "heart", "sugar", "green", "peace", "funny", "charm", "grace", "giddy", "cheer", "charm", "bliss", "vivid", "serene", "fresh", "clear", "quiet", "lively", "sleek", "happy", "sunny", "peace", "dream", "laugh", "sweet", "quick", "cloud", "music", "smile", "shine", "swift", "heart", "sugar", "green", "peace", "funny", "charm", "grace", "giddy", "cheer", "charm", "bliss", "vivid", "serene", "fresh", "clear", "quiet", "lively", "sleek", "happy", "sunny", "peace", "dream", "laugh", "sweet", "quick", "cloud", "music", "smile", "shine", "swift", "heart", "sugar", "green", "peace", "funny", "charm", "grace", "giddy", "cheer", "charm", "bliss", "vivid", "serene", "fresh", "clear", "quiet", "lively", "sleek", "happy", "sunny", "peace", "dream", "laugh", "sweet", "quick", "cloud", "music", "smile", "shine", "swift", "heart", "sugar", "green", "peace", "funny", "charm", "grace", "giddy", "cheer", "charm", "bliss", "vivid", "serene", "fresh", "clear", "quiet", "lively", "sleek", "happy", "sunny", "peace", "dream", "laugh", "sweet", "quick", "cloud", "music", "smile", "shine", "swift", "heart", "sugar", "green", "peace", "funny", "charm", "grace", "giddy", "cheer", "charm", "bliss", "vivid", "serene", "fresh", "clear", "quiet", "lively", "sleek", "happy", "sunny", "peace", "dream", "laugh", "sweet", "quick", "cloud", "music", "smile", "shine", "swift", "heart", "sugar", "green", "peace", "funny", "charm", "grace", "giddy", "cheer", "charm", "bliss", "vivid", "serene", "fresh", "clear", "quiet", "lively", "sleek", "happy", "sunny", "peace", "dream", "laugh", "sweet", "quick", "cloud", "music", "smile", "shine", "swift", "heart", "sugar", "green", "peace", "funny", "charm", "grace", "giddy", "cheer", "charm", "bliss", "vivid", "serene", "fresh", "clear", "quiet", "lively", "sleek", "happy", "sunny", "peace", "dream", "laugh", "sweet", "quick", "cloud", "music", "smile", "shine", "swift", "heart", "sugar", "green", "peace", "funny", "charm", "grace", "giddy", "cheer", "charm", "bliss", "vivid", "serene", "fresh", "clear", "quiet", "lively", "sleek"]
 }

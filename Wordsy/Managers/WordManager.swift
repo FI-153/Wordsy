@@ -61,7 +61,7 @@ class WordManager {
 	}
 	
 	private func getNewRandomWord(){
-		nextWords.append(Word(Word.words[Int.random(in: 0..<Word.words.count)]))
+		nextWords.append(Word(Word.availableWords[Int.random(in: 0..<Word.availableWords.count)]))
 	}
 	
 	private func initiliseNextWords(){
